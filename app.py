@@ -66,9 +66,16 @@ if not os.path.exists("chroma_db"):
 # ── Import tutor (after checks so errors are visible) ────────────────────────
 from src.tutor import get_response  # noqa: E402
 
+# ── Sidebar — debug mode ──────────────────────────────────────────────────────
+with st.sidebar:
+    st.markdown("### Opciones")
+    debug_mode = st.toggle("Mostrar fragmentos recuperados", value=False)
+
 # ── Session state ─────────────────────────────────────────────────────────────
 if "messages" not in st.session_state:
     st.session_state.messages = []
+if "last_nodes" not in st.session_state:
+    st.session_state.last_nodes = []
 
 # ── Chat history ──────────────────────────────────────────────────────────────
 for msg in st.session_state.messages:
@@ -83,9 +90,20 @@ if prompt := st.chat_input("Escribe aquí tu duda o describe tu modelo..."):
 
     with st.chat_message("assistant"):
         with st.spinner("Pensando..."):
-            reply = get_response(prompt, st.session_state.messages)
+            reply, nodes = get_response(prompt, st.session_state.messages)
         st.markdown(reply)
+        if debug_mode and nodes:
+            with st.expander(f"🔍 {len(nodes)} fragmentos recuperados"):
+                for i, node in enumerate(nodes, 1):
+                    fname = node["metadata"].get("file_name", "")
+                    page = node["metadata"].get("page_label", "?")
+                    sim = node.get("similarity", 0)
+                    st.caption(f"**#{i}** · {fname} · p.{page} · similitud: {sim:.2f}")
+                    st.text(node["text"][:400] + ("…" if len(node["text"]) > 400 else ""))
+                    if i < len(nodes):
+                        st.divider()
 
+    st.session_state.last_nodes = nodes
     st.session_state.messages.append({"role": "assistant", "content": reply})
 
 # ── Footer ────────────────────────────────────────────────────────────────────

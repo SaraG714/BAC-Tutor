@@ -1,10 +1,17 @@
 import os
 from groq import Groq
 from dotenv import load_dotenv
-from src.prompts import SYSTEM_PROMPT
+from src.prompts import SYSTEM_PROMPT, FALLBACK_PROMPT
 from src.retriever import retrieve, format_context
 
 load_dotenv()
+
+# Fallback chain: if the primary model hits quota, the next one is tried automatically.
+# llama-3.1-8b-instant has ~14x more free requests/day than 70b-versatile.
+_MODEL_CHAIN = [
+    "llama-3.3-70b-versatile",
+    "llama-3.1-8b-instant",
+]
 
 _client = None
 
@@ -24,54 +31,58 @@ def _format_history(messages: list) -> str:
     return "\n".join(lines) if lines else "(inicio de la conversación)"
 
 
-def _last_substantive_question(messages: list) -> str:
-    """Return the last user message longer than 20 chars, for fallback retrieval."""
-    for msg in reversed(messages[:-1]):
-        if msg["role"] == "user" and len(msg["content"].strip()) > 20:
-            return msg["content"]
-    return ""
+def _call_llm(prompt: str) -> str:
+    """Try each model in the chain; fall through on 429."""
+    last_err = None
+    for model in _MODEL_CHAIN:
+        try:
+            response = _get_client().chat.completions.create(
+                model=model,
+                messages=[{"role": "user", "content": prompt}],
+                max_tokens=512,
+            )
+            return response.choices[0].message.content.strip()
+        except Exception as e:
+            err = str(e)
+            etype = type(e).__name__
+            if "429" in err or "rate_limit" in err.lower():
+                last_err = e
+                continue  # try next model
+            if "ConnectionError" in etype or "getaddrinfo" in err:
+                raise RuntimeError("connection") from e
+            raise  # non-quota error → propagate immediately
+    raise last_err  # all models exhausted
 
 
-def get_response(question: str, messages: list) -> str:
+def get_response(question: str, messages: list) -> tuple:
+    chat_history = _format_history(messages)
+
     try:
-        nodes = retrieve(question)
-        # If the current message is short/meta ("no sé", "ayúdame", "?"),
-        # re-retrieve using the last substantive question so context stays relevant.
-        if not nodes and len(question.strip()) < 30:
-            fallback = _last_substantive_question(messages)
-            if fallback:
-                nodes = retrieve(fallback)
+        nodes = retrieve(question, chat_history=chat_history)
     except Exception as e:
         if "getaddrinfo" in str(e) or "ConnectError" in type(e).__name__:
-            return "⚠️ Sin conexión. Verifica tu internet e intenta de nuevo."
+            return "⚠️ Sin conexión. Verifica tu internet e intenta de nuevo.", []
         raise
 
     if not nodes:
-        return (
-            "No encontré fragmentos del material del curso relacionados con tu pregunta. "
-            "¿Puedes reformularla usando términos del metamodelo BAC?"
+        prompt = FALLBACK_PROMPT.format(
+            chat_history=chat_history,
+            question=question,
         )
-
-    context = format_context(nodes)
-    chat_history = _format_history(messages)
-
-    prompt = SYSTEM_PROMPT.format(
-        context=context,
-        chat_history=chat_history,
-        question=question,
-    )
+    else:
+        context = format_context(nodes)
+        prompt = SYSTEM_PROMPT.format(
+            context=context,
+            chat_history=chat_history,
+            question=question,
+        )
 
     try:
-        response = _get_client().chat.completions.create(
-            model="llama-3.3-70b-versatile",
-            messages=[{"role": "user", "content": prompt}],
-            max_tokens=512,
-        )
-        return response.choices[0].message.content.strip()
+        return _call_llm(prompt), nodes
     except Exception as e:
         err = str(e)
         if "429" in err or "rate_limit" in err.lower():
-            return "⚠️ Límite de la API alcanzado. Espera un momento e intenta de nuevo."
-        if "getaddrinfo" in err or "ConnectError" in type(e).__name__:
-            return "⚠️ Sin conexión a la API de Groq. Verifica tu internet e intenta de nuevo."
+            return "⚠️ Cuota agotada en todos los modelos. Intenta mañana o habilita billing en console.groq.com.", []
+        if "connection" in err.lower() or "ConnectionError" in type(e).__name__ or "getaddrinfo" in err:
+            return "⚠️ Sin conexión a la API de Groq. Verifica tu internet e intenta de nuevo.", []
         raise

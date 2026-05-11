@@ -3,6 +3,7 @@ Run once to index PDFs from docs/ into ChromaDB.
 Usage: python -m src.indexer
 """
 import os
+import re
 import chromadb
 from sentence_transformers import SentenceTransformer
 from dotenv import load_dotenv
@@ -16,6 +17,13 @@ CHROMA_DIR = "chroma_db"
 COLLECTION_NAME = "bac_tutor"
 EMBED_MODEL = "paraphrase-multilingual-MiniLM-L12-v2"
 
+_STOPWORDS = {
+    "para", "como", "esto", "este", "esta", "pero", "donde", "cuando",
+    "tiene", "puede", "sobre", "entre", "hasta", "desde", "durante",
+    "después", "antes", "también", "aunque", "porque", "través", "parte",
+    "todos", "todas", "cada", "otros", "otras", "mismo", "misma",
+}
+
 _model = None
 
 
@@ -25,6 +33,21 @@ def _get_model():
         print(f"Cargando modelo de embeddings '{EMBED_MODEL}'...")
         _model = SentenceTransformer(EMBED_MODEL)
     return _model
+
+
+def _extract_keywords(text: str, max_kw: int = 15) -> str:
+    """Extract main nouns/terms (>5 chars, no stopwords) for debug metadata."""
+    words = re.findall(r"[a-záéíóúüñA-ZÁÉÍÓÚÜÑ]{5,}", text)
+    seen: set = set()
+    keywords = []
+    for w in words:
+        wl = w.lower()
+        if wl not in _STOPWORDS and wl not in seen:
+            seen.add(wl)
+            keywords.append(wl)
+        if len(keywords) >= max_kw:
+            break
+    return " ".join(keywords)
 
 
 def build_index():
@@ -38,7 +61,7 @@ def build_index():
     documents = SimpleDirectoryReader(DOCS_DIR).load_data()
     print(f"  {len(documents)} páginas cargadas.")
 
-    parser = SentenceSplitter(chunk_size=512, chunk_overlap=50)
+    parser = SentenceSplitter(chunk_size=512, chunk_overlap=80)
     nodes = parser.get_nodes_from_documents(documents)
     print(f"  {len(nodes)} chunks generados.")
 
@@ -59,6 +82,7 @@ def build_index():
         {
             "file_name": n.metadata.get("file_name", ""),
             "page_label": str(n.metadata.get("page_label", "")),
+            "keywords": _extract_keywords(n.text),
         }
         for n in nodes
     ]
