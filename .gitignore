@@ -1,0 +1,21 @@
+# Secrets
+.env
+
+# Generated vector store
+chroma_db/
+
+# Course PDFs (add to git only if they are public)
+docs/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# macOS
+.DS_Store
+
+# Streamlit
+.streamlit/secrets.toml
