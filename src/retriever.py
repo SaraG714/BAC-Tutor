@@ -1,24 +1,22 @@
 import os
 import chromadb
-from google import genai
-from dotenv import load_dotenv
-
-load_dotenv()
+from sentence_transformers import SentenceTransformer
 
 CHROMA_DIR = "chroma_db"
 COLLECTION_NAME = "bac_tutor"
-EMBED_MODEL = "gemini-embedding-001"
+EMBED_MODEL = "paraphrase-multilingual-MiniLM-L12-v2"
 TOP_K = 3
+MIN_SIMILARITY = 0.4  # cosine similarity; below this the question is likely out of scope
 
-_client = None
+_model = None
 _collection_cache = None
 
 
-def _get_client():
-    global _client
-    if _client is None:
-        _client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
-    return _client
+def _get_model():
+    global _model
+    if _model is None:
+        _model = SentenceTransformer(EMBED_MODEL)
+    return _model
 
 
 def _get_collection():
@@ -30,19 +28,22 @@ def _get_collection():
 
 
 def retrieve(query: str) -> list:
-    embedding = _get_client().models.embed_content(
-        model=EMBED_MODEL,
-        contents=query,
-    ).embeddings[0].values
+    embedding = _get_model().encode(query, show_progress_bar=False).tolist()
 
     results = _get_collection().query(
         query_embeddings=[embedding],
         n_results=TOP_K,
-        include=["documents", "metadatas"],
+        include=["documents", "metadatas", "distances"],
     )
     nodes = []
-    for doc, meta in zip(results["documents"][0], results["metadatas"][0]):
-        nodes.append({"text": doc, "metadata": meta})
+    for doc, meta, dist in zip(
+        results["documents"][0],
+        results["metadatas"][0],
+        results["distances"][0],
+    ):
+        similarity = 1.0 - dist  # cosine distance → similarity
+        if similarity >= MIN_SIMILARITY:
+            nodes.append({"text": doc, "metadata": meta, "similarity": similarity})
     return nodes
 
 

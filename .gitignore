@@ -1,8 +1,8 @@
 # Secrets
 .env
 
-# Generated vector store
-chroma_db/
+# Generated vector store — commit after indexing for deploy
+# chroma_db/
 
 # Course PDFs (add to git only if they are public)
 docs/

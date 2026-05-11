@@ -1,5 +1,5 @@
 import os
-from google import genai
+from groq import Groq
 from dotenv import load_dotenv
 from src.prompts import SYSTEM_PROMPT
 from src.retriever import retrieve, format_context
@@ -12,7 +12,7 @@ _client = None
 def _get_client():
     global _client
     if _client is None:
-        _client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
+        _client = Groq(api_key=os.getenv("GROQ_API_KEY"))
     return _client
 
 
@@ -25,7 +25,12 @@ def _format_history(messages: list) -> str:
 
 
 def get_response(question: str, messages: list) -> str:
-    nodes = retrieve(question)
+    try:
+        nodes = retrieve(question)
+    except Exception as e:
+        if "getaddrinfo" in str(e) or "ConnectError" in type(e).__name__:
+            return "⚠️ Sin conexión. Verifica tu internet e intenta de nuevo."
+        raise
 
     if not nodes:
         return (
@@ -42,8 +47,17 @@ def get_response(question: str, messages: list) -> str:
         question=question,
     )
 
-    response = _get_client().models.generate_content(
-        model="gemini-2.0-flash",
-        contents=prompt,
-    )
-    return response.text.strip()
+    try:
+        response = _get_client().chat.completions.create(
+            model="llama-3.3-70b-versatile",
+            messages=[{"role": "user", "content": prompt}],
+            max_tokens=512,
+        )
+        return response.choices[0].message.content.strip()
+    except Exception as e:
+        err = str(e)
+        if "429" in err or "rate_limit" in err.lower():
+            return "⚠️ Límite de la API alcanzado. Espera un momento e intenta de nuevo."
+        if "getaddrinfo" in err or "ConnectError" in type(e).__name__:
+            return "⚠️ Sin conexión a la API de Groq. Verifica tu internet e intenta de nuevo."
+        raise

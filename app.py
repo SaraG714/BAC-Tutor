@@ -4,6 +4,14 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+# Streamlit Cloud stores secrets separately; sync to env so the rest of the
+# code can use os.getenv() uniformly.
+try:
+    if "GROQ_API_KEY" in st.secrets:
+        os.environ["GROQ_API_KEY"] = st.secrets["GROQ_API_KEY"]
+except Exception:
+    pass
+
 # ── Page config ──────────────────────────────────────────────────────────────
 st.set_page_config(
     page_title="BAC Tutor",
@@ -38,9 +46,9 @@ st.info(
 st.divider()
 
 # ── Check API key ─────────────────────────────────────────────────────────────
-if not os.getenv("GOOGLE_API_KEY"):
+if not os.getenv("GROQ_API_KEY"):
     st.error(
-        "Falta la variable de entorno `GOOGLE_API_KEY`. "
+        "Falta la variable de entorno `GROQ_API_KEY`. "
         "Agrégala en `.env` (local) o en los Secrets de Streamlit Cloud.",
         icon="🔑",
     )

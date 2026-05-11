@@ -3,9 +3,8 @@ Run once to index PDFs from docs/ into ChromaDB.
 Usage: python -m src.indexer
 """
 import os
-import time
 import chromadb
-from google import genai
+from sentence_transformers import SentenceTransformer
 from dotenv import load_dotenv
 from llama_index.core import SimpleDirectoryReader
 from llama_index.core.node_parser import SentenceSplitter
@@ -15,24 +14,17 @@ load_dotenv()
 DOCS_DIR = "docs"
 CHROMA_DIR = "chroma_db"
 COLLECTION_NAME = "bac_tutor"
-EMBED_MODEL = "gemini-embedding-001"
+EMBED_MODEL = "paraphrase-multilingual-MiniLM-L12-v2"
 
-_client = None
-
-
-def _get_client():
-    global _client
-    if _client is None:
-        _client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
-    return _client
+_model = None
 
 
-def get_embedding(text: str) -> list:
-    result = _get_client().models.embed_content(
-        model=EMBED_MODEL,
-        contents=text,
-    )
-    return result.embeddings[0].values
+def _get_model():
+    global _model
+    if _model is None:
+        print(f"Cargando modelo de embeddings '{EMBED_MODEL}'...")
+        _model = SentenceTransformer(EMBED_MODEL)
+    return _model
 
 
 def build_index():
@@ -55,32 +47,35 @@ def build_index():
         chroma_client.delete_collection(COLLECTION_NAME)
     except Exception:
         pass
-    collection = chroma_client.create_collection(COLLECTION_NAME)
+    collection = chroma_client.create_collection(
+        COLLECTION_NAME,
+        metadata={"hnsw:space": "cosine"},
+    )
 
-    print("Generando embeddings y guardando en ChromaDB...")
-    batch_size = 20
+    print("Generando embeddings (local, sin límites de API)...")
+    texts = [n.text for n in nodes]
+    ids = [n.node_id for n in nodes]
+    metadatas = [
+        {
+            "file_name": n.metadata.get("file_name", ""),
+            "page_label": str(n.metadata.get("page_label", "")),
+        }
+        for n in nodes
+    ]
+
+    embeddings = _get_model().encode(
+        texts, batch_size=32, show_progress_bar=True
+    ).tolist()
+
+    batch_size = 100
     for i in range(0, len(nodes), batch_size):
-        batch = nodes[i : i + batch_size]
-        texts = [n.text for n in batch]
-        ids = [n.node_id for n in batch]
-        metadatas = [
-            {
-                "file_name": n.metadata.get("file_name", ""),
-                "page_label": str(n.metadata.get("page_label", "")),
-            }
-            for n in batch
-        ]
-        embeddings = [get_embedding(t) for t in texts]
         collection.add(
-            ids=ids,
-            embeddings=embeddings,
-            documents=texts,
-            metadatas=metadatas,
+            ids=ids[i : i + batch_size],
+            embeddings=embeddings[i : i + batch_size],
+            documents=texts[i : i + batch_size],
+            metadatas=metadatas[i : i + batch_size],
         )
-        done = min(i + batch_size, len(nodes))
-        print(f"  {done}/{len(nodes)} chunks indexados...")
-        if done < len(nodes):
-            time.sleep(15)  # stay under 100 req/min free tier
+        print(f"  {min(i + batch_size, len(nodes))}/{len(nodes)} chunks guardados...")
 
     print(f"Indexación completa. Vectores guardados en '{CHROMA_DIR}/'.")
 
