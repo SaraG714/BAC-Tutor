@@ -28,7 +28,7 @@ def build_index():
     documents = SimpleDirectoryReader(DOCS_DIR).load_data()
     print(f"  {len(documents)} páginas cargadas.")
 
-    parser = SentenceSplitter(chunk_size=512, chunk_overlap=50)
+    parser = SentenceSplitter(chunk_size=512, chunk_overlap=128)
     nodes = parser.get_nodes_from_documents(documents)
     print(f"  {len(nodes)} chunks generados.")
 

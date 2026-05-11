@@ -7,7 +7,7 @@ from rank_bm25 import BM25Okapi
 
 INDEX_DIR = "vector_index"
 EMBED_MODEL = "paraphrase-multilingual-MiniLM-L12-v2"
-TOP_K = 5
+TOP_K = 7
 MIN_SIMILARITY = 0.15  # lower — hybrid score compensates
 BM25_WEIGHT = 0.35     # weight for keyword score; (1 - BM25_WEIGHT) for semantic
 
