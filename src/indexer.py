@@ -1,4 +1,5 @@
 """
+<<<<<<< HEAD
 Run once to index PDFs from docs/ into ChromaDB.
 Usage: python -m src.indexer [--skip-images]
 """
@@ -14,14 +15,26 @@ from llama_index.core import SimpleDirectoryReader
 from llama_index.core.node_parser import SentenceSplitter
 from pypdf import PdfReader
 from groq import Groq
+=======
+Run once to index PDFs into a numpy vector store (no chromadb).
+Usage: python -m src.indexer
+"""
+import os
+import json
+import numpy as np
+from dotenv import load_dotenv
+from llama_index.core import SimpleDirectoryReader
+from llama_index.core.node_parser import SentenceSplitter
+from sentence_transformers import SentenceTransformer
+>>>>>>> 32a30ae0d8150d18de1f5e269225959d3fa76050
 
 load_dotenv()
 
 DOCS_DIR = "docs"
-CHROMA_DIR = "chroma_db"
-COLLECTION_NAME = "bac_tutor"
+INDEX_DIR = "vector_index"
 EMBED_MODEL = "paraphrase-multilingual-MiniLM-L12-v2"
 
+<<<<<<< HEAD
 _STOPWORDS = {
     "para", "como", "esto", "este", "esta", "pero", "donde", "cuando",
     "tiene", "puede", "sobre", "entre", "hasta", "desde", "durante",
@@ -136,6 +149,8 @@ def _extract_keywords(text: str, max_kw: int = 15) -> str:
             break
     return " ".join(keywords)
 
+=======
+>>>>>>> 32a30ae0d8150d18de1f5e269225959d3fa76050
 
 def build_index(skip_images: bool = False):
     if not os.path.exists(DOCS_DIR) or not os.listdir(DOCS_DIR):
@@ -148,46 +163,33 @@ def build_index(skip_images: bool = False):
     documents = SimpleDirectoryReader(DOCS_DIR).load_data()
     print(f"  {len(documents)} páginas cargadas.")
 
-    parser = SentenceSplitter(chunk_size=512, chunk_overlap=80)
+    parser = SentenceSplitter(chunk_size=512, chunk_overlap=128)
     nodes = parser.get_nodes_from_documents(documents)
     print(f"  {len(nodes)} chunks generados.")
 
-    chroma_client = chromadb.PersistentClient(path=CHROMA_DIR)
-    try:
-        chroma_client.delete_collection(COLLECTION_NAME)
-    except Exception:
-        pass
-    collection = chroma_client.create_collection(
-        COLLECTION_NAME,
-        metadata={"hnsw:space": "cosine"},
-    )
+    print(f"Cargando modelo '{EMBED_MODEL}'...")
+    model = SentenceTransformer(EMBED_MODEL)
 
-    print("Generando embeddings (local, sin límites de API)...")
     texts = [n.text for n in nodes]
-    ids = [n.node_id for n in nodes]
     metadatas = [
         {
             "file_name": n.metadata.get("file_name", ""),
             "page_label": str(n.metadata.get("page_label", "")),
-            "keywords": _extract_keywords(n.text),
         }
         for n in nodes
     ]
 
-    embeddings = _get_model().encode(
-        texts, batch_size=32, show_progress_bar=True
-    ).tolist()
+    print("Generando embeddings...")
+    embeddings = model.encode(texts, batch_size=32, show_progress_bar=True)
 
-    batch_size = 100
-    for i in range(0, len(nodes), batch_size):
-        collection.add(
-            ids=ids[i : i + batch_size],
-            embeddings=embeddings[i : i + batch_size],
-            documents=texts[i : i + batch_size],
-            metadatas=metadatas[i : i + batch_size],
-        )
-        print(f"  {min(i + batch_size, len(nodes))}/{len(nodes)} chunks guardados...")
+    os.makedirs(INDEX_DIR, exist_ok=True)
+    np.save(os.path.join(INDEX_DIR, "embeddings.npy"), embeddings)
+    with open(os.path.join(INDEX_DIR, "texts.json"), "w", encoding="utf-8") as f:
+        json.dump(texts, f, ensure_ascii=False)
+    with open(os.path.join(INDEX_DIR, "metadatas.json"), "w", encoding="utf-8") as f:
+        json.dump(metadatas, f, ensure_ascii=False)
 
+<<<<<<< HEAD
     # ── Image descriptions ────────────────────────────────────────────────────
     if not skip_images:
         print("\nExtrayendo e indexando imágenes del material...")
@@ -211,6 +213,9 @@ def build_index(skip_images: bool = False):
         print("\nExtracción de imágenes omitida (--skip-images).")
 
     print(f"Indexación completa. Vectores guardados en '{CHROMA_DIR}/'.")
+=======
+    print(f"Indexación completa. Índice guardado en '{INDEX_DIR}/'.")
+>>>>>>> 32a30ae0d8150d18de1f5e269225959d3fa76050
 
 
 if __name__ == "__main__":

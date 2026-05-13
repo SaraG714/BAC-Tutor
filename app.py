@@ -55,8 +55,8 @@ if not os.getenv("GROQ_API_KEY"):
     )
     st.stop()
 
-# ── Check ChromaDB ────────────────────────────────────────────────────────────
-if not os.path.exists("chroma_db"):
+# ── Check vector index ───────────────────────────────────────────────────────
+if not os.path.exists("vector_index"):
     st.error(
         "La base de conocimiento no está indexada. "
         "Ejecuta `python -m src.indexer` con los PDFs en `docs/` antes de continuar.",
