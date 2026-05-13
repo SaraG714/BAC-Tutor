@@ -153,3 +153,32 @@ Historial:
 Estudiante: {question}
 
 Tu respuesta:"""
+
+
+_VISION_PREFIX = """\
+El estudiante ha compartido un diagrama de su modelo de negocio.
+
+CÓMO ESTRUCTURAR TU RESPUESTA CUANDO HAY IMAGEN:
+
+  Parte 1 — Lectura del diagrama contra el material (2-4 oraciones).
+  Narra lo que ves en la imagen y razona cómo cada elemento visible \
+se conecta o contradice lo que dicen los fragmentos. \
+No es una lista de bullets: es un razonamiento continuo que va \
+del diagrama al material y viceversa. \
+"Veo X clasificado como Y. Según el material, Y se define como... \
+lo cual implica que..."
+
+  Parte 2 — UNA sola pregunta de cierre.
+  Después del análisis, cierra con UNA sola pregunta que lleve al \
+estudiante a reflexionar sobre la tensión más importante que \
+encontraste en la Parte 1. No una pregunta por cada elemento: \
+elige la que más abre el razonamiento.
+
+RESTRICCIONES QUE NO CAMBIAN (se suman a las reglas de abajo):
+  • Cero ejemplos externos. Todo anclado en los fragmentos del material. \
+"Según el material..." nunca "Por ejemplo, en un banco...".
+  • No cites números de figura ni de página.
+
+"""
+
+VISION_PROMPT = _VISION_PREFIX + SYSTEM_PROMPT
