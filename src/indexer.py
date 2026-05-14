@@ -1,183 +1,162 @@
 """
-<<<<<<< HEAD
-Run once to index PDFs from docs/ into ChromaDB.
-Usage: python -m src.indexer [--skip-images]
-"""
-import os
-import re
-import base64
-import argparse
-from io import BytesIO
-import chromadb
-from sentence_transformers import SentenceTransformer
-from dotenv import load_dotenv
-from llama_index.core import SimpleDirectoryReader
-from llama_index.core.node_parser import SentenceSplitter
-from pypdf import PdfReader
-from groq import Groq
-=======
 Run once to index PDFs into a numpy vector store (no chromadb).
 Usage: python -m src.indexer
 """
 import os
+import io
 import json
+import base64
+import time
 import numpy as np
 from dotenv import load_dotenv
 from llama_index.core import SimpleDirectoryReader
 from llama_index.core.node_parser import SentenceSplitter
 from sentence_transformers import SentenceTransformer
->>>>>>> 32a30ae0d8150d18de1f5e269225959d3fa76050
+from groq import Groq
+import fitz  # pymupdf
 
 load_dotenv()
 
 DOCS_DIR = "docs"
 INDEX_DIR = "vector_index"
 EMBED_MODEL = "paraphrase-multilingual-MiniLM-L12-v2"
-
-<<<<<<< HEAD
-_STOPWORDS = {
-    "para", "como", "esto", "este", "esta", "pero", "donde", "cuando",
-    "tiene", "puede", "sobre", "entre", "hasta", "desde", "durante",
-    "después", "antes", "también", "aunque", "porque", "través", "parte",
-    "todos", "todas", "cada", "otros", "otras", "mismo", "misma",
-}
-
-_VISION_MODEL = "meta-llama/llama-4-scout-17b-16e-instruct"
-_VISION_DESCRIPTION_PROMPT = (
-    "Eres un asistente que analiza diagramas de un libro de "
-    "Arquitectura Empresarial. Describe este diagrama en texto "
-    "plano de forma exhaustiva: qué elementos aparecen, cómo "
-    "se relacionan, qué conceptos del metamodelo BAC muestra, "
-    "y cualquier label o texto visible. Sé preciso y técnico."
-)
-
-_model = None
+VISION_MODEL = "meta-llama/llama-4-scout-17b-16e-instruct"
+MIN_IMAGE_SIZE = 8000  # bytes — ignora iconos y decoraciones pequeñas
 
 
-def _get_model():
-    global _model
-    if _model is None:
-        print(f"Cargando modelo de embeddings '{EMBED_MODEL}'...")
-        _model = SentenceTransformer(EMBED_MODEL)
-    return _model
+def _describe_image(client: Groq, img_bytes: bytes, file_name: str, page: int):
+    """Sends an image to Groq Vision and returns a description in Spanish."""
+    b64 = base64.standard_b64encode(img_bytes).decode("utf-8")
+    try:
+        resp = client.chat.completions.create(
+            model=VISION_MODEL,
+            messages=[
+                {
+                    "role": "user",
+                    "content": [
+                        {
+                            "type": "image_url",
+                            "image_url": {"url": f"data:image/png;base64,{b64}"},
+                        },
+                        {
+                            "type": "text",
+                            "text": (
+                                "Eres un asistente académico para el curso ISIS-2403 "
+                                "Arquitectura Empresarial (Universidad de los Andes). "
+                                "Describe esta figura del material del curso en español. "
+                                "Explica qué muestra, qué conceptos del metamodelo BAC "
+                                "aparecen (actores, productos, procesos, relaciones, etc.) "
+                                "y qué relaciones o estructuras se pueden observar. "
+                                "Sé preciso y usa el vocabulario del curso. Máximo 150 palabras."
+                            ),
+                        },
+                    ],
+                }
+            ],
+            max_tokens=300,
+        )
+        return resp.choices[0].message.content.strip()
+    except Exception as e:
+        print(f"  ⚠️  Error describiendo imagen (p.{page}, {file_name}): {e}")
+        return None
 
 
-def _describe_image(image_b64: str, groq_client: Groq) -> str:
-    response = groq_client.chat.completions.create(
-        model=_VISION_MODEL,
-        messages=[
-            {
-                "role": "user",
-                "content": [
-                    {
-                        "type": "image_url",
-                        "image_url": {"url": f"data:image/png;base64,{image_b64}"},
-                    },
-                    {"type": "text", "text": _VISION_DESCRIPTION_PROMPT},
-                ],
-            }
-        ],
-        max_tokens=512,
-    )
-    return response.choices[0].message.content.strip()
+def _page_has_visual_content(page) -> bool:
+    """Returns True if the page has drawings, images, or non-trivial graphics."""
+    # Check for raster images
+    if page.get_images(full=True):
+        return True
+    # Check for vector drawings (paths with fill/stroke)
+    drawings = page.get_drawings()
+    if len(drawings) > 5:
+        return True
+    return False
 
 
-def _extract_image_chunks(docs_dir: str, groq_client: Groq) -> tuple:
-    """Return (texts, ids, metadatas) for all image descriptions found in PDFs."""
-    from PIL import Image  # noqa: PLC0415
+def _extract_image_chunks(docs_dir: str, client: Groq) -> tuple[list, list]:
+    """Renders pages with visual content and describes them with Groq Vision."""
+    texts, metadatas = [], []
+    pdf_files = [f for f in os.listdir(docs_dir) if f.lower().endswith(".pdf")]
 
-    pdf_files = sorted(
-        os.path.join(docs_dir, f)
-        for f in os.listdir(docs_dir)
-        if f.lower().endswith(".pdf")
-    )
+    for pdf_file in pdf_files:
+        path = os.path.join(docs_dir, pdf_file)
+        print(f"  Escaneando páginas de {pdf_file}...")
+        doc = fitz.open(path)
+        img_count = 0
 
-    total_images = 0
-    for p in pdf_files:
-        _r = PdfReader(p)
-        total_images += sum(len(pg.images) for pg in _r.pages)
+        for page_num, page in enumerate(doc, start=1):
+            if not _page_has_visual_content(page):
+                continue
 
-    if total_images == 0:
-        print("  No se encontraron imágenes en los PDFs.")
-        return [], [], []
+            # Render page as PNG at 150 DPI
+            mat = fitz.Matrix(150 / 72, 150 / 72)
+            pix = page.get_pixmap(matrix=mat)
+            img_bytes = pix.tobytes("png")
 
-    print(f"  {total_images} imágenes encontradas.")
+            if len(img_bytes) < MIN_IMAGE_SIZE:
+                continue
 
-    texts, ids, metadatas = [], [], []
-    current = 0
+            print(f"    p.{page_num} ({len(img_bytes) // 1024} KB) → describiendo con visión...")
+            description = _describe_image(client, img_bytes, pdf_file, page_num)
 
-    for pdf_path in pdf_files:
-        pdf_name = os.path.basename(pdf_path)
-        reader = PdfReader(pdf_path)
-        for page_num, page in enumerate(reader.pages, 1):
-            for img_idx, img_obj in enumerate(page.images):
-                current += 1
-                print(f"  Describiendo imagen {current} de {total_images} "
-                      f"({pdf_name}, p.{page_num})...")
-                try:
-                    pil_img = Image.open(BytesIO(img_obj.data))
-                    buf = BytesIO()
-                    pil_img.save(buf, format="PNG")
-                    b64 = base64.b64encode(buf.getvalue()).decode("utf-8")
-                    description = _describe_image(b64, groq_client)
-                    texts.append(description)
-                    ids.append(f"{pdf_name}_p{page_num}_img{img_idx}")
-                    metadatas.append({
-                        "file_name": pdf_name,
-                        "page_label": str(page_num),
-                        "type": "image",
-                        "description": "imagen extraída automáticamente",
-                        "keywords": _extract_keywords(description),
-                    })
-                except Exception as exc:
-                    print(f"  ⚠️  Error en imagen {current}: {exc}")
+            if description:
+                texts.append(f"[Figura en p.{page_num}] {description}")
+                metadatas.append({
+                    "file_name": pdf_file,
+                    "page_label": str(page_num),
+                    "type": "image",
+                })
+                img_count += 1
+                time.sleep(1.5)  # avoid rate limits
 
-    return texts, ids, metadatas
+        print(f"    {img_count} páginas con figuras indexadas de {pdf_file}.")
+        doc.close()
+
+    return texts, metadatas
 
 
-def _extract_keywords(text: str, max_kw: int = 15) -> str:
-    """Extract main nouns/terms (>5 chars, no stopwords) for debug metadata."""
-    words = re.findall(r"[a-záéíóúüñA-ZÁÉÍÓÚÜÑ]{5,}", text)
-    seen: set = set()
-    keywords = []
-    for w in words:
-        wl = w.lower()
-        if wl not in _STOPWORDS and wl not in seen:
-            seen.add(wl)
-            keywords.append(wl)
-        if len(keywords) >= max_kw:
-            break
-    return " ".join(keywords)
-
-=======
->>>>>>> 32a30ae0d8150d18de1f5e269225959d3fa76050
-
-def build_index(skip_images: bool = False):
+def build_index():
     if not os.path.exists(DOCS_DIR) or not os.listdir(DOCS_DIR):
         raise FileNotFoundError(
             f"No se encontraron PDFs en '{DOCS_DIR}/'. "
             "Agrega las lecturas del curso antes de indexar."
         )
 
+    groq_key = os.getenv("GROQ_API_KEY")
+    if not groq_key:
+        raise EnvironmentError("Falta GROQ_API_KEY en el entorno.")
+    client = Groq(api_key=groq_key)
+
+    # ── Text chunks ───────────────────────────────────────────────────────────
     print("Cargando documentos...")
     documents = SimpleDirectoryReader(DOCS_DIR).load_data()
     print(f"  {len(documents)} páginas cargadas.")
 
     parser = SentenceSplitter(chunk_size=512, chunk_overlap=128)
     nodes = parser.get_nodes_from_documents(documents)
-    print(f"  {len(nodes)} chunks generados.")
-
-    print(f"Cargando modelo '{EMBED_MODEL}'...")
-    model = SentenceTransformer(EMBED_MODEL)
+    print(f"  {len(nodes)} chunks de texto generados.")
 
     texts = [n.text for n in nodes]
     metadatas = [
         {
             "file_name": n.metadata.get("file_name", ""),
             "page_label": str(n.metadata.get("page_label", "")),
+            "type": "text",
         }
         for n in nodes
     ]
+
+    # ── Image chunks ──────────────────────────────────────────────────────────
+    print("Procesando imágenes con Groq Vision...")
+    img_texts, img_metadatas = _extract_image_chunks(DOCS_DIR, client)
+    print(f"  {len(img_texts)} chunks de imagen generados.")
+
+    texts += img_texts
+    metadatas += img_metadatas
+
+    # ── Embeddings ────────────────────────────────────────────────────────────
+    print(f"Cargando modelo '{EMBED_MODEL}'...")
+    model = SentenceTransformer(EMBED_MODEL)
 
     print("Generando embeddings...")
     embeddings = model.encode(texts, batch_size=32, show_progress_bar=True)
@@ -189,41 +168,8 @@ def build_index(skip_images: bool = False):
     with open(os.path.join(INDEX_DIR, "metadatas.json"), "w", encoding="utf-8") as f:
         json.dump(metadatas, f, ensure_ascii=False)
 
-<<<<<<< HEAD
-    # ── Image descriptions ────────────────────────────────────────────────────
-    if not skip_images:
-        print("\nExtrayendo e indexando imágenes del material...")
-        groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
-        img_texts, img_ids, img_metas = _extract_image_chunks(DOCS_DIR, groq_client)
-
-        if img_texts:
-            print(f"  Generando embeddings para {len(img_texts)} descripciones de imágenes...")
-            img_embeddings = _get_model().encode(
-                img_texts, batch_size=32, show_progress_bar=True
-            ).tolist()
-            for i in range(0, len(img_texts), batch_size):
-                collection.add(
-                    ids=img_ids[i : i + batch_size],
-                    embeddings=img_embeddings[i : i + batch_size],
-                    documents=img_texts[i : i + batch_size],
-                    metadatas=img_metas[i : i + batch_size],
-                )
-            print(f"  {len(img_texts)} descripciones de imágenes indexadas.")
-    else:
-        print("\nExtracción de imágenes omitida (--skip-images).")
-
-    print(f"Indexación completa. Vectores guardados en '{CHROMA_DIR}/'.")
-=======
-    print(f"Indexación completa. Índice guardado en '{INDEX_DIR}/'.")
->>>>>>> 32a30ae0d8150d18de1f5e269225959d3fa76050
+    print(f"\nIndexación completa. {len(texts)} chunks totales guardados en '{INDEX_DIR}/'.")
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Indexar PDFs del curso en ChromaDB.")
-    parser.add_argument(
-        "--skip-images",
-        action="store_true",
-        help="Omitir extracción de imágenes; solo indexar texto.",
-    )
-    args = parser.parse_args()
-    build_index(skip_images=args.skip_images)
+    build_index()
