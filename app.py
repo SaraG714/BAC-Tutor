@@ -1,6 +1,9 @@
 import os
+import re
 import base64
+from typing import Optional, Tuple
 import streamlit as st
+import streamlit.components.v1 as components
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -67,6 +70,28 @@ if not os.path.exists("vector_index"):
 # ── Import tutor (after checks so errors are visible) ────────────────────────
 from src.tutor import get_response, get_response_with_image  # noqa: E402
 
+
+def _split_mermaid(text: str) -> Tuple[str, Optional[str]]:
+    # Match ```mermaid or plain ``` blocks that start with a mermaid keyword
+    pattern = r"```(?:mermaid)?\s*\n((?:graph|sequenceDiagram|classDiagram)[\s\S]*?)```"
+    match = re.search(pattern, text, re.DOTALL)
+    if match:
+        diagram = match.group(1).strip()
+        clean = (text[: match.start()] + text[match.end() :]).strip()
+        return clean, diagram
+    return text, None
+
+
+def _render_mermaid(code: str) -> None:
+    html = f"""
+    <div class="mermaid" style="background:white;padding:8px;border-radius:6px">
+{code}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({{startOnLoad:true,theme:'neutral'}});</script>
+    """
+    components.html(html, height=380, scrolling=True)
+
 # ── Sidebar ───────────────────────────────────────────────────────────────────
 with st.sidebar:
     st.markdown("### Opciones")
@@ -113,7 +138,10 @@ if st.session_state.pending_image:
 # ── Chat history ──────────────────────────────────────────────────────────────
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
-        st.markdown(msg["content"])
+        text, diagram = _split_mermaid(msg["content"])
+        st.markdown(text)
+        if diagram:
+            _render_mermaid(diagram)
         if msg.get("image_b64"):
             st.image(
                 base64.b64decode(msg["image_b64"]),
@@ -153,7 +181,10 @@ if prompt := st.chat_input("Escribe aquí tu duda o describe tu modelo..."):
                 )
             else:
                 reply, nodes = get_response(prompt, st.session_state.messages)
-        st.markdown(reply)
+        reply_text, diagram = _split_mermaid(reply)
+        st.markdown(reply_text)
+        if diagram:
+            _render_mermaid(diagram)
         if debug_mode and nodes:
             with st.expander(f"🔍 {len(nodes)} fragmentos recuperados"):
                 for i, node in enumerate(nodes, 1):
