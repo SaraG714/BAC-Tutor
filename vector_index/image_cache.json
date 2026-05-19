@@ -1,0 +1,922 @@
+{
+  "El Modelo de Negocio 2027.pdf::p4": {
+    "text": "[Figura en p.4] La figura 1 muestra los dominios de una arquitectura de negocio, la cual está compuesta por un conjunto de modelos (M1...M8) sobre diferentes dominios (D1...D8). Estos dominios son: dominio de negocio (D1), dominio financiero (D2), dominio de estrategia (D3), dominio de capacidades (D4), dominio organizacional (D5), dominio de procesos (D6), dominio de recursos (D7) y dominio de indicadores (D8).\n\nSe pueden observar relaciones entre modelos, interconexiones entre dominios relacionados. Por ejemplo, el dominio de negocio (D1) se relaciona con el dominio financiero (D2) a través del modelo M1 y M2. \n\nEl metamodelo BAC (Business Architecture Canvas) no se menciona directamente, pero se pueden inferir conceptos como: \n\n*   **Actores**: no se observan directamente, pero se infieren en los dominios de negocio (D1), organizacional (D5) y de capacidades (D4).\n*   **Productos**: no se observan directamente.\n*   **Procesos**: dominio de procesos (D6).\n*   **Relaciones**: interconexiones entre dominios.\n\nEstos componentes ayudan a estructurar y visualizar la arquitectura empresarial.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "4",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p5": {
+    "text": "[Figura en p.5] La figura representa una arquitectura de negocio con base en el metamodelo Business Architecture Canvas (BAC). Seis modelos componen la arquitectura de negocio. \n\nEl Modelo de intención (arriba) se compone de:\n\n*   M1: Modelo de negocio\n*   M2: Modelo financiero\n*   M3: Modelo estratégico\n\nEl Modelo operativo (abajo) se compone de:\n\n*   M4: Modelo de capacidades\n*   M5: Modelo organizacional\n*   M6: Modelo de procesos\n*   M7: Modelo de recursos\n\nEl modelo de indicadores (a la derecha) se compone de:\n\n*   M8: Modelo de indicadores\n\nSe puede observar que el M4 agrupa y soporta al modelo operativo;  por otro lado, M1, M2 y M3 son la base para el Modelo de intención.\n\nSeis modelos son mencionados explícitamente en la figura. Sin embargo, implícitamente podemos hablar de subdominios como: \n\n*   Modelo de productos\n*   Modelo de actores\n*   Modelo de escenarios de negocios\n*   Modelo de rutas (journeys) de clientes\n\nSe puede apreciar que algunas estructuras se relacionan jerárquicamente. Por ejemplo: M4 agrupa al modelo operativo; M1, M2 y M3 son la base para el Modelo de intención; o el modelo de capacidades soporta al modelo operativo. Adicionalmente, el modelo de intención y el modelo operativo se integr",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "5",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p7": {
+    "text": "[Figura en p.7] La figura 3, titulada \\\"Principales usos de un modelo de negocio\\\", ilustra la utilidad del modelo de negocio en el contexto de la Arquitectura Empresarial. Se observa que un modelo de negocio (M1) es fundamental para construir el mapa de capacidades, diseñar un nuevo negocio, analizar y transformar uno existente, diseñar la experiencia del cliente, y analizar y diseñar procesos, tecnología y el modelo organizacional.\n\nSe pueden identificar conceptos del metamodelo Business Architecture Canvas (BAC) como:\n\n*   **Actores**: clientes y organización.\n*   **Procesos**: analizar y diseñar procesos.\n*   **Productos/ servicios**: experiencia de los clientes.\n\nLas relaciones observadas son:\n\n*   El modelo de negocio es la base para la arquitectura empresarial.\n*   La interconexión entre el modelo de negocio con capacidades, diseño de negocio, clientes, procesos, tecnología y estructura organizacional.\n\nEsta figura resume cómo un modelo de negocio sólido es clave para alinear los componentes de una empresa.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "7",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p8": {
+    "text": "[Figura en p.8] La figura muestra la división de una Arquitectura Empresarial en dos grandes grupos: Arquitectura de Negocio y Arquitectura de TI. Cada uno de ellos, a su vez, se subdivide en dominios. En la Arquitectura de Negocio, se presentan los dominios D1 a D8. Mientras que en la Arquitectura de TI, los dominios son D9 Aplicaciones, D10 Información, D11 Infraestructura, D12 Integración y D13 Seguridad.\n\nEn la figura, se pueden observar los siguientes conceptos del metamodelo:\n\n*   **Dominios**: D1 a D13\n*   **Relación entre dominios**: Cada dominio está relacionado con otros mediante líneas que indican conexiones entre ellos.\n\nEsta estructura refleja la organización y las interrelaciones entre diferentes áreas de la arquitectura empresarial, destacando la importancia de la alineación entre la arquitectura de negocio y la arquitectura de TI.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "8",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p11": {
+    "text": "[Figura en p.11] La Figura 5 muestra los subdominios del dominio de negocio en el metamodelo Business Architecture Canvas (BAC). Estos subdominios son:\n\n1. **Modelo funcional (D1.1)**: Describe las capacidades del negocio, enfocándose en lo que el negocio puede hacer para sus clientes.\n\n2. **Estructura de negocio (D1.2)**: Muestra la estructura estática, incluyendo actores (clientes, proveedores, intermediarios), canales y flujos de información, dinero y valor.\n\n3. **Escenarios de negocio (D1.3)**: Representan los modelos dinámicos que muestran cómo suceden las cosas en el negocio.\n\n4. **Rutas de clientes (D1.4)**: Describe las interacciones del cliente con el negocio.\n\n5. **Modelo ontológico (D1.5)**: Define la estructura de conocimiento del negocio.\n\nEstos subdominios se relacionan mediante actores, productos y procesos, mostrando una visión integral de la arquitectura empresarial. Se pueden observar estructuras como flujos de valor, relaciones entre actores y procesos de negocio.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "11",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p13": {
+    "text": "[Figura en p.13] La figura presenta una visión general de los artefactos de un modelo de negocio en el contexto del metamodelo **BAC** utilizado en el curso **ISIS-2403** de Arquitectura Empresarial. Se observa una estructura jerárquica con cinco artefactos clave:\n\n*   **D1.1: Modelo de negocio**: Incluye catálogo de negocios, portafolio de servicios, modelo de productos, modelo de actores (clientes) y marco regulatorio.\n*   **D1.2: Estructura de negocio**: Abarca ficha técnica de los canales, catálogo de participantes, catálogo de recursos, catálogo de componentes, estructura de negocio y catálogo de medios.\n*   **D1.3: Escenarios de negocio**: Comprende escenarios de negocio.\n*   **D1.4: Rutas de clientes**: Se enfoca en rutas de clientes.\n*   **D1.5: Modelo ontológico**: Incluye metamodelo, catálogo de conceptos, catálogo de relaciones y atributos, catálogo de restricciones y modelo conceptual.\n\n\\\nEstos artefactos se relacionan a través de una estructura que organiza el dominio de negocio en subdominios, mostrando conceptos como actores, productos, procesos y relaciones, fundamentales en el metamodelo **BAC**.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "13",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p14": {
+    "text": "[Figura en p.14] La figura 7 muestra la estructura de un subdominio del metamodelo de **Base de Arquitectura Corporativa (BAC)**, enfocada en los elementos de negocio. En ella se observan cuatro negocios, cada uno identificado como \"Negocio-1\", \"Negocio-2\", \"Negocio-3\" y \"Negocio-4\". Cada negocio ofrece servicios agrupados en portafolios (ps1, ps2, ps3, ps4) y entrega productos (p1, p2, p3, p4) a actores (a1, a2, a3, a4).\n\nSe pueden identificar conceptos clave como:\n\n*   **Actores (a1, a2, a3, a4)**: Consumidores o receptores de los productos ofrecidos por los negocios.\n*   **Productos (p1, p2, p3, p4)**: Bienes o servicios proporcionados por cada negocio a los actores.\n*   **Portafolios de servicios (ps1, ps2, ps3, ps4)**: Conjuntos de servicios ofrecidos por cada negocio.\n\nLas relaciones observadas son:\n\n*   Un negocio puede ofrecer múltiples servicios agrupados en portafolios.\n*   Un servicio puede entregar múltiples productos a un conjunto de actores. \n\nEsta estructura es fundamental para entender cómo los negocios interactúan con sus clientes y cómo se estructuran sus servicios en el contexto de la Arquitectura Empresarial",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "14",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p15": {
+    "text": "[Figura en p.15] La figura muestra el metamodelo de base del subdominio, que representa la relación entre los conceptos principales de la arquitectura empresarial. Se observa que una **empresa** (entidad raíz) tiene asociados múltiples **negocios**. Cada **negocio** se compone de un **catálogo de actores**, un **catálogo de productos** y un **portafolio de servicios de negocio**. \n\nLos **servicios de negocio** se relacionan con los **actores** que atienden y con los **productos** que entregan. \n\nAparecen conceptos clave del metamodelo **BAC** (Business Architecture Canvas): \n\n*   **Actores**: Entidades que interactúan con el negocio.\n*   **Productos**: Bienes o servicios entregados por el negocio.\n\nSe pueden observar relaciones como:\n\n*   Un negocio tiene múltiples actores y productos.\n*   Un producto es entregado por un servicio de negocio a través de actores.\n\nEsto refleja la estructura básica para modelar la arquitectura de un negocio en el contexto del curso **ISIS-2403 Arquitectura Empresarial**.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "15",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p18": {
+    "text": "[Figura en p.18] La imagen muestra un fragmento del material del curso ISIS-2403 Arquitectura Empresarial, enfocado en la clasificación de **productos** en el metamodelo **BAC** (Business Architecture Canvas). Se describen **10 tipos de productos**, como bienes físicos, servicios, soluciones de problemas, eventos, plataformas, entre otros. \n\nSe presenta un ejemplo de un hotel con cuatro productos: Habitación simple, Habitación múltiple, Junior suite y Suite. Cada producto se clasifica como un **bien físico durable** y se describe según sus características.\n\nEn esta figura, aparecen conceptos como **actores** (clientes, empresas), **productos** (bienes y servicios ofrecidos) y **relaciones** entre ellos. No se mencionan explícitamente **procesos**, pero se implica la creación de valor a través de la oferta de productos. La estructura observada es la clasificación de productos según sus características y tipos, lo que permite una mejor comprensión de la **arquitectura empresarial** del hotel.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "18",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p19": {
+    "text": "[Figura en p.19] La figura describe un catálogo de productos de un banco, modelados como grupos de productos en el metamodelo BAC-81. Se presentan tres productos: Cuenta corriente (P1), Cuenta de ahorro (P2) y CDT (P3), cada uno con atributos específicos como tipo, cuota de manejo y tasa de interés. \n\nEn este caso, se observa el concepto de **familia de productos**, donde un grupo de productos comparte una caracterización a través de una estructura de atributos. \n\nPor ejemplo, el producto P3 CDT describe una familia de productos. \n\nSe pueden identificar **relaciones** entre los productos y sus atributos, y **estructuras complejas** como tablas que asocian productos específicos con montos y duraciones. \n\nLos conceptos del metamodelo BAC que aparecen son principalmente **productos** y **atributos**. \n\nNo se observan **actores** ni **procesos** en esta figura.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "19",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p20": {
+    "text": "[Figura en p.20] La imagen muestra un fragmento del material del curso ISIS-2403 Arquitectura Empresarial de la Universidad de los Andes, específicamente sobre el metamodelo BAC (Business Architecture Canvas). Se presenta la definición y recomendaciones para modelar el artefacto BAC-81, correspondiente al catálogo de productos, junto con una tabla vacía para su descripción.\n\nSe listan preguntas clave sobre el modelado de productos y se introduce el concepto de actores, definidos como personas (naturales o jurídicas) con una relación de negocio con la empresa que aprovechan los productos ofrecidos.\n\nLos conceptos del metamodelo BAC que aparecen son:\n\n*   **Productos:** Se define como objetos de negocio que la empresa ofrece. \n*   **Actores:** Personas (naturales o jurídicas) con una relación de negocio con la empresa.\n\nLas relaciones entre estos conceptos se centran en cómo los actores interactúan con los productos ofrecidos por la empresa.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "20",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p21": {
+    "text": "[Figura en p.21] La figura 9 muestra el modelo de actores de un periódico. Se identifican tres actores: \"Empresa publicidad\" (cliente), \"Suscriptor\" (cliente) y \"Lector gratuito\" (usuario). Estos actores interactúan con el negocio \"Periódico\", recibiendo productos como \"plataforma\" (para la Empresa publicidad) e \"información\" (para el Suscriptor) de manera gratuita para el Lector gratuito. \n\nAparecen los conceptos de **actores** y **productos** del metamodelo Business Architecture Canvas (BAC). El periódico mantiene relaciones de **interacción** con estos actores: provee servicios a cambio de pago (plataforma a Empresa publicidad, información a Suscriptor) y ofrece gratuitamente información a Lector gratuito. No se observan procesos explícitamente en la figura; sin embargo, se infieren al considerar las interacciones entre actores y el negocio. \n\nSe puede observar una estructura de **cliente**, **usuario** y **modelo de monetización**, donde el periódico ofrece servicios a cambio de pago y también ofrece contenido gratuito para generar tráfico.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "21",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p22": {
+    "text": "[Figura en p.22] La figura muestra varios ejemplos de actores y negocios, ilustrando el metamodelo de Arquitectura Empresarial (BAC). Se presentan tres casos: Facebook (red social), Mercado Libre (marketplace) y una Fundación.\n\nSe identifican **actores** como clientes (Empresa publicidad, Vendedor, Donante) y usuarios (Usuario, Comprador, Beneficiario). Los **productos** son: plataforma (Facebook), producto físico (Mercado Libre) y servicio (Fundación). \n\nLas **relaciones** muestran cómo los actores interactúan: la Empresa publicidad ofrece publicidad y el Usuario recibe información en Facebook; el Vendedor publica productos y el Comprador adquiere productos físicos en Mercado Libre; el Donante ofrece donaciones y el Beneficiario recibe servicios en la Fundación.\n\nEstas estructuras reflejan conceptos clave del metamodelo BAC, como actores, productos y relaciones entre ellos. Se destacan modelos de negocio donde los clientes pagan para que otros reciban valor, resaltando la importancia de identificar actores y flujos en la arquitectura empresarial.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "22",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p25": {
+    "text": "[Figura en p.25] La figura presenta un ejemplo del catálogo de actores para el negocio de captación. Muestra la tabla \"Artefacto BAC-01 (catálogo de actores)\" con un ejemplo de un actor denominado \"Cliente captación\" de tipo cliente.\n\nSe observan los siguientes conceptos del metamodelo BAC:\n\n*   **Actores:** Representados en la tabla como \"Cliente captación\" con ID A1.\n*   **Tipo:** Se categoriza como \"Cliente\".\n*   **Atributos de segmentación:** Incluyen:\n    *   Persona natural: Grupo etario, Geografía.\n    *   Persona jurídica: Sector (privado | público), Tamaño, Industria.\n*   **Descripción:** \"Actor que maneja un producto de captación con el banco\".\n\nSe puede observar la relación entre actores y sus atributos de segmentación, lo cual es crucial para identificar y clasificar a los actores dentro del contexto empresarial y así poder ofrecer servicios más personalizados. Esta estructura permite una mejor comprensión y gestión de los clientes en el negocio de captación.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "25",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p26": {
+    "text": "[Figura en p.26] La Figura 11 ilustra una empresa que implementa dos negocios: N1 y N2. Cada negocio ofrece un portafolio de servicios (PS1 y PS2) a actores distintos. El negocio N1 ofrece servicios S1, S2 y S3 a los actores a1, a2 y a3. El negocio N2 ofrece servicios S4 y S5 a los actores a4 y a5.\n\nEn este ejemplo, se pueden observar los siguientes conceptos del metamodelo BAC:\n\n*   **Actores (a1, a2, a3, a4, a5)**: Entidades externas que interactúan con la empresa.\n*   **Servicios (S1, S2, S3, S4, S5)**: Acciones concretas que ejecuta la empresa para entregar productos a los actores.\n*   **Portafolio de servicios (PS1, PS2)**: Conjunto de servicios ofrecidos por cada negocio.\n\nSe puede observar la relación entre los actores y los servicios que consumen, así como la relación entre los servicios y los negocios que los ofrecen. Esto permite visualizar cómo la empresa estructura sus servicios para atender las necesidades de diferentes actores a través de distintos negocios.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "26",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p27": {
+    "text": "[Figura en p.27] La figura describe un portafolio de servicios (BAC-02) de una empresa con tres negocios diferentes que ofrecen servicios específicos. \n\nSe pueden observar conceptos de servicios, actores, productos y sus relaciones. Los servicios son descritos con un ID, nombre, descripción y se relacionan con los actores que están dirigidos y los productos que entregan. \n\nLos servicios representan acciones directas que la empresa ejecuta para entregar productos a actores. En la tabla se listan los servicios identificados con campos de descripción breve e ID de los productos y actores relacionados. \n\nSe ilustra la relación entre **servicios, actores y productos,** que son parte del metamodelo Business Architecture Canvas (BAC) de arquitectura empresarial. La estructura presentada permite identificar claramente los servicios ofrecidos por la empresa, los actores involucrados y los productos asociados, mostrando una visión integral de la oferta de valor de la empresa.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "27",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p28": {
+    "text": "[Figura en p.28] La figura presentada en el material del curso ISIS-2403 Arquitectura Empresarial de la Universidad de los Andes describe un ejemplo de servicios de negocio. \n\nMuestra un fragmento de texto que describe el concepto de servicio de negocio y su relación con los actores y productos. \n\nSe pueden identificar los siguientes conceptos del metamodelo Business Architecture Content (BAC):\n\n*   **Actores**: Se mencionan actores como el cliente y el comprador.\n*   **Productos**: Se mencionan productos como los productos físicos.\n\nEn cuanto a las relaciones, se puede observar que:\n\n*   Un servicio de negocio se relaciona con al menos un actor identificado.\n*   Un servicio de negocio se relaciona con al menos un producto.\n\nEstas relaciones son fundamentales en la Arquitectura Empresarial, ya que permiten modelar y analizar la estructura y el comportamiento de una organización.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "28",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p29": {
+    "text": "[Figura en p.29] Esta figura muestra una tabla que relaciona diferentes tipos de negocios con sus servicios de negocio, actores y productos. Se pueden observar los siguientes conceptos del metamodelo Business Activity Concept (BAC):\n\n*   **Actores**: Clientes, empresas, vendedores, compradores, entrenadores, suscriptores, lectores gratuitos, usuarios.\n*   **Productos**: Bienes físicos durables (habitación, salón para eventos), resultados (masaje relajante, plan turístico, viaje), servicios (entrenamiento, clase, certificación), productos físicos (batido), plataformas (alquiler de espacio, publicidad), información (periódicos en papel, uso del portal WEB), productos físicos y digitales (productos), comidas y bebidas, cursos de cocina.\n\nLas relaciones que se pueden observar son:\n\n*   Un negocio puede ofrecer varios servicios de negocio.\n*   Un servicio de negocio puede estar relacionado con varios actores.\n*   Un actor puede interactuar con varios servicios de negocio.\n*   Un producto puede ser resultado de un servicio de negocio.\n\nEstas relaciones reflejan la estructura de una arquitectura empresarial, donde los negocios ofrecen servicios a actores específicos, generando productos que satisfacen sus necesidades. En el ámbito de la Arquitectura Empresarial, esta figura ilustra cómo los componentes de un sistema empresarial (servicios, actores, productos) se interrelacionan para lograr objetivos comerciales.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "29",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p30": {
+    "text": "[Figura en p.30] La figura muestra una tabla que relaciona un modelo de negocio (formato de una tabla de metamodelo de servicios de negocio) con diferentes tipos de servicios de negocio.\n\nEn la primera fila de esta tabla aparecen columnas que hacen referencia a los servicios de negocio, actores y productos. En la segunda fila, aparecen renglones con los nombres de los servicios de negocio. En las celdas de esta tabla se relacionan los servicios de negocio con los actores que intervienen y los productos entregados.\n\nSe puede observar la aparición de los conceptos de servicios de negocio, actores y productos, que hacen parte del metamodelo de servicios de negocio (MM- BAC). También, se puede observar la relación entre estos conceptos.\n\nEsta tabla resume la parte de servicios de negocio del metamodelo de servicios de negocio (MM-BAC) e ilustra con ejemplos cómo diligenciar esta parte del metamodelo.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "30",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p31": {
+    "text": "[Figura en p.31] La figura muestra cuatro empresas con varios negocios y servicios. \n\nLa primera es una universidad con seis negocios: educación formal, alquiler de espacios, entre otros. La segunda es una concesionaria con servicios de taller, repuestos, financiación de vehículos, etc. La tercera es un supermercado con cuatro negocios. La cuarta es un banco con ocho negocios diferentes.\n\nDel metamodelo BAC podemos observar:\n\n*   **Actores**: clientes, empresas.\n*   **Productos y servicios**: educación formal, alquiler de espacios, servicio de repuestos, servicio de taller, servicio de financiación, productos de supermercado, servicios bancarios.\n*   **Relaciones**: líneas de negocio, portafolio de servicios.\n\nSe puede observar cómo las empresas ofrecen diferentes servicios a clientes. Además, cada empresa tiene diferentes líneas de negocio con portafolios de servicios diferentes.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "31",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p32": {
+    "text": "[Figura en p.32] La Figura 12 muestra ejemplos de empresas y negocios que implementan líneas de negocio. Se presentan cinco organizaciones (Universidad, Concesionario, Supermercado, Banco) y sus respectivos catálogos de negocios. Cada empresa tiene varios negocios, y algunos de ellos se dividen en líneas de negocio (por ejemplo, Educación continua de una universidad se divide en corporativa, abierta y MOOCs). \n\nSe pueden observar conceptos del metamodelo BAC como **negocios**, **productos o servicios** ofrecidos por cada negocio, y **relaciones** de composición entre organizaciones, negocios y servicios. Las estructuras reflejan cómo los servicios de un portafolio se organizan en líneas de negocio para una mejor clasificación y gestión. \n\nAparecen **actores** (Universidades, Concesionarios, Supermercados, Bancos) con sus respectivos **procesos** y **servicios ofrecidos**.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "32",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p33": {
+    "text": "[Figura en p.33] La figura 13 muestra el metamodelo del dominio de negocio en el contexto de la Arquitectura Empresarial. Este metamodelo representa los componentes clave de un negocio a nivel de dominio de negocio.\n\nEn esta figura, se describen los siguientes conceptos del metamodelo BAC:\n\n*   **Empresa**: Entidad que engloba múltiples negocios.\n*   **Negocio**: Línea de acción de una empresa que suele estar asociada a un catálogo de productos.\n*   **Línea de negocio**: Agrupación de servicios de negocio relacionados.\n*   **Servicio de negocio**: Entrega productos a actores. \n*   **Productos**: Resultado de un servicio de negocio (objetos de negocio) con tipos definidos: producto físico, producto digital, bien físico durable, servicio, resultado, recursos humanos, información, dinero, bienes intangibles y plataforma.\n*   **Actores**: Clientes, usuarios, prospectos, potenciales u otros con atributos.\n\nLas relaciones observadas son:\n\n*   Una empresa tiene múltiples negocios.\n*   Un negocio tiene múltiples líneas de negocio y productos.\n*   Una línea de negocio tiene múltiples servicios de negocio.\n*   Un servicio de negocio entrega uno o varios productos a actores.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "33",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p34": {
+    "text": "[Figura en p.34] La figura muestra un ejemplo de la empresa Netflix, aplicando conceptos del metamodelo Business Architecture Canvas (BAC). Se describen los **productos** ofrecidos (catálogo de productos BAC-81), los **actores** involucrados en la plataforma (catálogo de actores BAC-01) y los **servicios** proporcionados (portafolio de servicios BAC-02). \n\nEl producto P1, denominado **Contenido digital**, abarca películas, series y documentales. Los actores identificados son: **A1 (Suscriptor)**, quien paga por acceder; **A2 (Amparado)**, que usa la cuenta de otro; y **A3 (Temporal)**, con acceso gratuito limitado. \n\nLos servicios ofrecidos son **S1 (Acceso completo a contenido digital)** para A1 y A2, y **S2 (Acceso parcial a contenido digital)** para A3. \n\nSe observan relaciones entre actores y servicios, y entre servicios y productos, ilustrando la interconexión de estos elementos en la arquitectura empresarial de Netflix.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "34",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p35": {
+    "text": "[Figura en p.35] La figura describe un ejemplo de un catálogo de servicios en un ecosistema de comercio electrónico en Amazon con el metamodelo **Business Architecture Canvas (BAC)**. El catálogo de servicios presenta dos servicios: **S1: Permitir el uso de la plataforma para vender productos** y **S2: Vender productos por la plataforma y entregarlos a los compradores**. Los actores involucrados en este proceso son un **vendedor (A1)** que ofrece productos a través de la plataforma de Amazon y un **comprador (A2)** que compra productos en la plataforma de Amazon. Los productos relacionados son **P1: Plataforma de comercio electrónico** y **P2: Productos físicos o digitales**. Las relaciones observadas son:\n\n*   El vendedor (A1) se relaciona con el servicio **S1**.\n*   El comprador (A2) se relaciona con el servicio **S2**.\n\nEn este caso, un producto puede ser utilizado por varios actores en diferentes servicios. El servicio **S1** ofrece el uso de la plataforma de Amazon al vendedor **(A1)**, mientras que el servicio **S2** permite al comprador **(A2)** comprar productos y pagarlos electrónicamente.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "35",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p37": {
+    "text": "[Figura en p.37] La figura 14 del material del curso ISIS-2403 Arquitectura Empresarial muestra la estructura de un modelo de negocio. En ella podemos apreciar 4 actores (a1, a2, a3 y a4) a los cuales se les ofrece un conjunto de servicios (s1, s2, s3 y s4). Estos servicios son representados por cajas y se relacionan entre sí a través de canales (líneas). \n\nEn esta figura, relacionada con el metamodelo Business Architecture Canvas (BAC), podemos observar los actores (a1, a2, a3, a4) y los servicios (s1, s2, s3, s4) que son ofrecidos por la empresa, donde es posible identificar relaciones de colaboración entre los actores y los servicios suministrados. \n\nLa estructura presentada sugiere que los servicios son suministrados a través de canales de comunicación que conectan a los actores con los servicios y éstos entre sí, mostrando la forma en que se relacionan para generar valor. Esta figura representa la capa de Estructura de Negocio del metamodelo BAC.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "37",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p38": {
+    "text": "[Figura en p.38] La figura presenta la sintaxis gráfica para modelar la estructura de un negocio. Se observan tres componentes: **Proveedor**, **Negocio** y **Comprador**. Estos componentes interactúan a través de canales (C1 y C2), representando flujos de información, dinero o valor.\n\nSe identifican los actores **Proveedor** (tipo oferente) y **Comprador** (tipo cliente). El **Negocio** gestiona las interacciones entre ellos. Los canales describen cómo se intercambian elementos de valor.\n\nEsta representación ilustra relaciones entre oferentes, clientes y el negocio, mostrando una estructura básica de intercambio. Permite visualizar cómo los componentes de negocio interactúan para implementar servicios.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "38",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p39": {
+    "text": "[Figura en p.39] La figura muestra estructuras de negocio de un periódico (Figura 16), con sus 3 actores (Empresa, Suscriptor y Lector gratuito) y un marketplace (Vendedor, Comprador), con un proveedor (Fábrica). Se puede observar que las estructuras de negocio están compuestas por actores (Empresa, Suscriptor, Lector gratuito, Vendedor, Comprador y Fábrica) y canales (C1, C2, C3, C4, C5, C6, C7). \n\nLos actores son los agentes que intervienen en la estructura de un negocio. Un canal es la conexión entre actores, por la cual se intercambian productos o información.\n\nEn la Figura 16, se puede observar que el canal C1 relaciona la Empresa con el Suscriptor. El Lector gratuito se relaciona con la Empresa a través del canal C3. \n\nSe puede observar que los canales tienen un tipo (C4, aprovisionamiento). \n\nEn la Figura 17, se presentan las estructuras de negocio de un hotel y un taxi, donde se puede ver que un negocio puede tener varios canales con un mismo actor.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "39",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p40": {
+    "text": "[Figura en p.40] La Figura 18 muestra un metamodelo parcial de la estructura de negocio, parte del framework Business Architecture Canvas (BAC). Este metamodelo describe la estructura de una organización, relacionando componentes, canales, actividades, participantes y recursos.\n\nSe observan conceptos como:\n\n*   **Estructura de negocio:** Engloba la organización y sus componentes.\n*   **Componente:** Elementos que constituyen el negocio, con nombre.\n*   **Canal:** Medio a través del cual interactúan los componentes, con ID, nombre y tipo (aprovisionamiento, relacionamiento, distribución, monetización, transformación, retorno, sin tipo).\n*   **Actividad:** Tareas que se realizan, con ID y nombre.\n*   **Participante:** Entidades que intervienen, con ID y nombre.\n*   **Recurso:** Medios utilizados, con ID y nombre.\n\nLas relaciones incluyen:\n\n*   Una empresa puede tener múltiples estructuras de negocio.\n*   Una estructura de negocio se compone de componentes.\n*   Un componente puede estar conectado a varios canales.\n*   Un canal puede vincularse a varias actividades.\n*   Las actividades requieren participantes y recursos.\n\nEstas relaciones revelan la interacción dinámica dentro de la estructura de negocio.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "40",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p41": {
+    "text": "[Figura en p.41] La figura 19 muestra un ejemplo de componentes de negocio y sus relaciones en un contexto de arquitectura empresarial. Se presentan tres componentes: \n\n*   **Venta de papa** (negocio)\n*   **Supermercado** (intermediario)\n*   **Comprador** (cliente)\n\nEstos componentes interactúan mediante flujos de información, dinero y valor. El negocio (**Venta de papa**) se relaciona con un intermediario (**Supermercado**) a través de **C1** y este, a su vez, se relaciona con el cliente (**Comprador**) a través de **C2**.\n\nEn esta figura, se pueden observar conceptos del metamodelo Business Architecture Canvas (BAC) como:\n\n*   **Componentes de negocio**: Venta de papa, supermercado y comprador.\n*   **Relaciones**: Interconexiones entre componentes (C1 y C2). \n\nEsta estructura ilustra cómo los componentes de negocio interactúan a través de canales, facilitando el intercambio de información, dinero y valor en la cadena de suministro.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "41",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p43": {
+    "text": "[Figura en p.43] La figura muestra una tabla que describe el artefacto *BAC-06, Catálogo de Componentes*. Este artefacto es parte del metamodelo *BAC* (Business Architecture Catalog) y se utiliza para registrar los componentes que participan en un negocio. \n\nEn esta tabla, se pueden observar cuatro columnas:\n\n*   **Componente:** nombre del componente.\n*   **Tipo:** tipo de componente (proveedor, cliente, producto, etc.).\n*   **Descripción:** breve descripción del componente.\n*   **Contenido:** detalles adicionales sobre el componente.\n\nEn cuanto a los conceptos del metamodelo *BAC* que aparecen, se pueden identificar:\n\n*   **Componentes:** proveedores, clientes y productos.\n*   **Relaciones:** se puede inferir la relación entre los componentes, como por ejemplo, la relación entre un proveedor y un producto.\n\nEn resumen, esta figura presenta una herramienta para modelar y describir los componentes de un negocio, lo que permite analizar y comprender las relaciones entre ellos.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "43",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p44": {
+    "text": "[Figura en p.44] La Figura 20 ilustra los canales directos e indirectos en un modelo de negocio, específicamente en el contexto de un negocio editorial. Se observa un negocio (Editorial) que interactúa con actores y proveedores a través de canales. \n\n*   **Canales Directos:** C1 y C2, que conectan la editorial con proveedores de insumos y contenidos, respectivamente.\n*   **Canales Indirectos:** C3, entre la editorial y compradores a través de librerías, e I1, entre librerías y compradores.\n\nSe representan conceptos del metamodelo Business Architecture Canvas (BAC) como:\n\n*   **Actores:** Comprador, Comprador librería.\n*   **Componentes:** Editorial, Librería.\n*   **Relaciones:** Interacciones entre componentes a través de canales.\n\nEste ejemplo muestra cómo los canales facilitan el intercambio de elementos (dinero, información, valor) entre actores y componentes del modelo de negocio.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "44",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p46": {
+    "text": "[Figura en p.46] La figura 21 ilustra la estructura de negocio de una red social como Instagram. Muestra el componente de negocio \"Red social\" (proveedor de la plataforma) y dos actores: \"Empresa publicidad\" (cliente que paga por publicidad) y \"Usuario\" (usuario final de la plataforma). \n\nSe identifican los siguientes elementos del metamodelo Business Activity Concept (BAC):\n\n*   **Actores**: \"Empresa publicidad\" y \"Usuario\".\n*   **Productos**: No se mencionan explícitamente, pero se infiere que el servicio ofrecido por la red social es el producto.\n*   **Canales de relación**: \n    *   R1: Interacción entre \"Empresa publicidad\" y la \"Red social\" para acuerdos publicitarios.\n    *   R2: Interacción entre el \"Usuario\" y la \"Red social\" para publicación de contenido y obtención de servicios.\n    *   D2: Distribución de publicidad desde la \"Red social\" hacia el \"Usuario\".\n\nEstas relaciones muestran cómo interactúan los actores con la red social y entre sí, evidenciando la estructura básica del modelo de negocio de la plataforma.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "46",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p47": {
+    "text": "[Figura en p.47] La Figura 23 ilustra múltiples canales de monetización en el contexto de la Arquitectura Empresarial. Se observa un **cliente** (**Comprador**) que interactúa con la **Tienda** a través de un **canal de recepción** (**R1**) y utiliza dos canales de monetización: \n\n*   **M1:** pago con efectivo o tarjetas \n*   **M2:** pago mediante un préstamo personal.\n\nEstos canales de monetización interactúan con los canales de distribución:\n\n*   **D1:** entrega física del producto.\n\nEn este ejemplo, se aplican conceptos del metamodelo Business Architecture Canvas (BAC):\n\n*   **Actores:** Cliente (**Comprador**), **Tienda**.\n*   **Relaciones:** El **Comprador** interactúa con la **Tienda** a través de **R1** y usa **M1** o **M2** para pagar. \n\nEsta estructura muestra cómo una entidad puede ofrecer múltiples opciones de pago, ampliando su capacidad de monetización.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "47",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p48": {
+    "text": "[Figura en p.48] La Figura 24 ilustra un modelo de negocio con múltiples canales de distribución. Un proveedor de contenido editorial se relaciona con una librería, que a su vez interactúa con dos tipos de clientes: un comprador y un subscriptor. \n\nEn este escenario, se pueden identificar conceptos clave del metamodelo Business Architecture Canvas (BAC):\n\n*   **Actores/Partes interesadas:** Proveedor de contenido editorial, Librería, Comprador, Subscriptor (normal y premium).\n*   **Productos/Resultados:** Contenido editorial.\n*   **Procesos/Actividades:** Relacionamiento (R1), Monetización (M1) y Distribución (D1 y D2).\n\nSe observa que el proveedor y la librería comparten un canal de relacionamiento (R1) y monetización (M1), pero se diferencian en los canales de distribución (D1 y D2) debido a las distintas necesidades de los clientes. Esta estructura demuestra cómo un mismo proceso de negocio puede adaptarse a diferentes estrategias de distribución según el tipo de cliente.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "48",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p49": {
+    "text": "[Figura en p.49] La figura representa un canal de relacionamiento (R1) entre una clínica y sus pacientes, ilustrando la interacción a través de varios medios: presencial, teléfono, portal web, Facebook, WhatsApp y correo electrónico. En el contexto del metamodelo Business Architecture Canvas (BAC), se observan:\n\n*   **Actores**: La clínica y el paciente.\n*   **Canal de relacionamiento (Relación)**: R1, que vincula a la clínica con los pacientes.\n\nSe destaca la **omnicanalidad**, al ofrecer múltiples medios de interacción dentro de un mismo canal de relacionamiento. \n\nEsta estructura permite una interacción uniforme y flexible, facilitando la comunicación entre la clínica y los pacientes según sus preferencias.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "49",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p50": {
+    "text": "[Figura en p.50] La figura 28 del material del curso ISIS-2403 Arquitectura Empresarial muestra los canales de transformación en manufactura. Esta ilustración representa un proceso de manufactura donde se transforman insumos en productos mediante un canal de transformación (T). \n\nLos componentes clave son:\n\n*   **Insumos (A)**: Representan los materiales o recursos de entrada.\n*   **Bodega de insumos**: Almacena los insumos.\n*   **Bodega de productos**: Almacena los productos resultantes.\n*   **Productos (M)**: Son los resultados finales del proceso de transformación.\n*   **Proveedor**: Es el origen de los insumos.\n*   **Cliente o Comprador**: Es el destinatario de los productos.\n\nEl metamodelo BAC (Business Architecture Canvas) incluye conceptos como:\n\n*   **Actores**: Proveedor y Cliente/Comprador.\n*   **Productos**: Insumos y Productos.\n*   **Procesos/Actividades**: Canal de transformación (T).\n\nEsta figura ilustra cómo se agrega valor a los insumos convirtiéndolos en productos mediante un proceso de transformación.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "50",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p51": {
+    "text": "[Figura en p.51] La figura 29 muestra un modelo de negocio con un enfoque en los canales internos de distribución. Se puede observar un componente principal **negocio** con varios componentes internos: **Proveedor**, **Bodega de insumos**, **Bodega de productos**, **Puntos de venta** y **Comprador**.\n\nEn este modelo, se identifican varios elementos del metamodelo BAC:\n\n*   **Actores externos:** *   **Proveedor** *   **Comprador** \n*   **Canales externos:** No se encuentran explícitamente representados. \n*   **Componentes internos:** *   **Bodega de insumos** *   **Bodega de productos** *   **Puntos de venta**\n*   **Canales de transformación (procesos):** *   **T** (transformación de insumos) *   **D1** (distribución de productos a puntos de venta) *   **D2** (distribución desde puntos de venta al comprador) \n*   **Productos:** *   **Insumos** (almacenados en **Bodega de insumos**) *   **Productos** (almacenados en **Bodega de productos** y distribuidos a **Puntos de venta**)\n\nLas relaciones observadas son:\n\n*   **Proveedor** envía insumos a **Bodega de insumos** a través de **A.1**, **A.2** y **A.3.**\n*   **Bode",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "51",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p52": {
+    "text": "[Figura en p.52] La Figura 30 muestra la estructura de un negocio de cultivos y distribución de papa a través de intermediarios. Se observan los canales de distribución interno (D1) y externo (D2). \n\nEn el metamodelo Business Architecture Canvas (BAC), se identifican los actores: proveedor, negocio (cultivos de papa), intermediario (supermercado) y cliente (comprador). \n\nLos productos son los insumos y la papa empacada. \n\nLos procesos se representan con los canales: A (aprovisionamiento), T1 (cultivos), T2 (recolección y empacado), R (relacionamiento con supermercados), M (entrega de papa), D (cobro), e I1 (compra en supermercado).\n\nSe pueden observar relaciones de colaboración entre actores (negocio-proveedor, negocio-intermediario, intermediario-cliente) y flujos de productos y servicios. \n\nLa estructura presentada permite visualizar la topología del negocio, su forma, y cómo se relacionan los componentes internos y externos para entregar valor al cliente final.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "52",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p53": {
+    "text": "[Figura en p.53] La figura muestra un artefacto de modelo de negocio denominado \"BAC-07\" con una estructura de negocio. En este diagrama, se pueden identificar los siguientes conceptos del metamodelo BAC:\n\n*   Componentes: *Comp-1*, *Comp-2* y *Comp-3*\n*   Canales (conexiones entre componentes): A, R, M y D\n\nEl diagrama muestra la estructura de alto nivel de un negocio, con componentes interconectados a través de canales. Entre los conceptos de modelado de negocio que se pueden observar en la figura están:\n\n*   **Clientes/Actores:** No se observan en la figura\n*   **Canal:** Se observan los canales A, R, M y D\n*   **Servicio de negocio:** No se observan en la figura\n*   **Participante:** No se observan en la figura\n*   **Recurso:** No se observan en la figura\n\nEn resumen, la figura representa una estructura de negocio con componentes interconectados, pero no muestra clientes/actores, servicios de negocio, participantes o recursos.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "53",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p54": {
+    "text": "[Figura en p.54] La imagen muestra un fragmento del material del curso ISIS-2403 Arquitectura Empresarial de la Universidad de los Andes. Se describe la estructura de un modelo de negocio, enfocándose en canales, actividades, participantes y recursos.\n\nSe presentan preguntas clave sobre canales internos y externos, transformación, y componentes. \n\nEn el metamodelo Business Architecture Canvas (BAC), se observan conceptos como **canales** (internos y externos), **actividades** (aprovisionamiento, relacionamiento y distribución) y **relaciones** entre estos.\n\nLas relaciones observadas son:\n\n*   Canales con componentes internos.\n*   Actividades con canales.\n\nEstas estructuras son cruciales para comprender la arquitectura empresarial y su aplicación en el diseño de modelos de negocio efectivos.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "54",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p55": {
+    "text": "[Figura en p.55] La imagen muestra un texto en español que describe las **actividades** en el contexto de la Arquitectura Empresarial, utilizando el metamodelo **BAC (Business Activity Catalog)**. \n\nSe presentan ejemplos de **actividades de transformación** (p. ej., \"cortar\", \"pintar\") y **actividades de monetización** (p. ej., \"recibir un pago\", \"hacer una factura\"). \n\nSe enfatiza que las actividades deben expresarse con verbos, definir resultados claros, no incluir detalles de implementación, no referenciar otras actividades y redactarse desde el punto de vista del negocio. \n\nLas **actividades** se vinculan con **participantes** (roles dentro de la empresa) y se organizan en **canales** (R1, R1.1, R1.2, etc.). \n\nSe introduce la importancia de identificar posibles participantes para ejecutar las actividades, relacionando el **catálogo de actividades** con el **catálogo de participantes**. \n\nEstos conceptos reflejan elementos clave del metamodelo **BAC**, enfocados en modelar procesos y capacidades organizacionales.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "55",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p56": {
+    "text": "[Figura en p.56] La figura describe dos artefactos del metamodelo de **Business Activity Catalog (BAC)**: \n\n*   **BAC-04 (catálogo de participantes)**: Muestra la lista de actores o participantes en las actividades de un canal. Cada participante se le asigna un **ID** y puede tener roles internos como \"empleado\", \"colaborador\" o funciones específicas como \"Cocinero\" o \"Conductor\".\n*   **BAC-05 (catálogo de recursos)**: Presenta la lista de recursos necesarios para implementar las actividades. Estos pueden ser **físicos** (vehículos, equipos) o **digitales** (software). A cada recurso se le asigna un **ID**, nombre y descripción.\n\nEstos artefactos reflejan la estructura organizacional, identificando quiénes participan en los procesos y qué recursos se requieren. Se observa la relación entre participantes y recursos en la implementación de actividades, siendo crucial para definir responsabilidades y optimizar procesos.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "56",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p57": {
+    "text": "[Figura en p.57] La figura muestra un ejemplo de Arquitectura de Negocio utilizando el metamodelo Business Architecture Canvas. Se presentan dos modelos de negocio de una **tienda de ropa** que venden el **mismo producto** pero con diferentes estructuras de negocio. En el lado izquierdo de la figura se puede observar el negocio **N1** que fabrica **internamente** sus productos con insumos de **proveedores**. En el lado derecho de la figura se puede observar el negocio **N2** que **terceriza** la fabricación de sus productos con un **proveedor de fabricación**. Ambos modelos de negocio tienen dos **clientes**, un **comprador** que adquiere el producto final en una **tienda física**, en un **canal de monetización** denominado **M1** que tiene varios **medios de pago**.\n\nEn la figura se pueden observar **relaciones de asociación** entre actores, como la relación entre el negocio **N1** y los **proveedores** o el negocio **N2** y el **proveedor de fabricación**. Además, se puede apreciar una **relación de composición** entre el **canal de monetización M1** y sus **medios de pago**.\n\nLos conceptos del metamodelo Business Architecture Canvas que se pueden observar son:\n\n*   **Actores**: **Clientes**, **Proveedor**, **Proveedor de Fabricación**.\n*   **Productos**: **Producto**.\n*   **Procesos**: **Proceso de Fabricación** y",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "57",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p58": {
+    "text": "[Figura en p.58] La Figura 32 muestra los recursos asociados a los medios de un canal en el contexto de la Arquitectura Empresarial. En ella, se puede ver un canal denominado **Tienda** que interactúa con un **Comprador**. El canal **Tienda** tiene diferentes medios de interacción: **Efectivo**, **Tarjeta**, **App** y **Billetera digital**. A su vez, cada medio de interacción puede utilizar varios recursos como **R1-POS**, **R2- Datáfono** y **R3-App**.\n\nEn esta figura, se pueden identificar conceptos del metamodelo **BAC** como:\n\n*   **Actores**: **Comprador** y **Tienda**.\n*   **Procesos o Actividades**: No se observan directamente, pero se infieren en la interacción entre el **Comprador** y los medios de interacción.\n*   **Productos o Servicios**: No se observan directamente.\n*   **Medios o Recursos**: **R1-POS**, **R2- Datáfono** y **R3-App**.\n\nSe puede observar la relación entre el **Comprador** y los medios de interacción disponibles en el canal **Tienda**, así como la relación entre los medios de interacción y los recursos utilizados.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "58",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p59": {
+    "text": "[Figura en p.59] La figura describe una tienda simple como ejemplo de modelo de negocio. Se muestran los siguientes elementos del metamodelo BAC:\n\n*   **Catálogo de Productos (BAC-81)**: \n    *   Un producto: \"Productos\" (ID: P1), que es un producto físico.\n\n*   **Catálogo de Actores (BAC-01)**: \n    *   Un actor: \"Comprador\" (ID: A1), que es un cliente.\n\n*   **Portafolio de Servicios (BAC-02)**: \n    *   Un servicio: \"Vender productos\" (ID: S1), este es un servicio ofrecido por la tienda al comprador, que involucra la venta de productos.\n\n*   **Estructura de negocio (artefacto BAC-07)**: \n    *   Se observa una relación entre el servicio \"Vender productos\" (ID: S1) y el actor \"Comprador\" (ID: A1) y el producto \"Productos\" (ID: P1).\n\nEstos elementos ilustran cómo una tienda interactúa con sus clientes y ofrece servicios de venta de productos.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "59",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p60": {
+    "text": "[Figura en p.60] La figura ilustra el modelo de negocio de una tienda. En el centro, se observa el negocio como un todo (Tienda) con un actor externo: **Comprador**. \n\nSe identifican dos **proveedores**: *Proveedor de Productos* y *Destructor de Vencidos*, conectados a través de los canales *A1* y *A2*. Estos proveedores interactúan con la tienda a través de *Bodega* y *Estantería*, representando depósitos de objetos de valor.\n\nSe observan los siguientes conceptos del metamodelo *BAC*:\n\n*   **Actores**: *Proveedor de Productos*, *Destructor de Vencidos* y *Comprador*.\n*   **Componentes**: *Bodega* (productos para la venta), *Estantería* (productos exhibidos).\n*   **Canales**: *R1*, *M1* y *D1*.\n\nLas relaciones muestran la interacción entre actores externos, componentes internos y flujos de productos y servicios. Esta estructura refleja la organización interna y las interacciones clave en el negocio de la tienda.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "60",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p61": {
+    "text": "[Figura en p.61] La figura muestra una parte de las fichas técnicas de los canales del artefacto BAC-03 en el contexto de la Arquitectura Empresarial (AE). Se observan varios procesos:\n\n*   A1: Aprovisionamiento de productos\n*   A2: Destrucción de productos vencidos\n*   D2: Aprovisionamiento de la estantería\n*   R1: Relacionamiento con el cliente \n*   D1: Entrega de los productos comprados\n\nEn estas fichas, se detallan las **actividades** asociadas a cada proceso, junto con los **ID de los participantes** (Par1, Par2) y los **recursos** (R1, R2) involucrados.\n\nSe pueden identificar las siguientes relaciones:\n\n*   **Actores (Par1, Par2)**: Participan en diversas actividades.\n*   **Recursos (R1, R2)**: Asociados a ciertas actividades.\n*   **Procesos**: Interconectados a través de sus actividades y participantes.\n\nEstos elementos reflejan la estructura y las interrelaciones dentro de la arquitectura empresarial.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "61",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p62": {
+    "text": "[Figura en p.62] La figura presenta un ejemplo de estructura de negocio para Netflix, utilizando conceptos del metamodelo Business Architecture Canvas (BAC). \n\nMuestra los actores (Proveedor de licencias de contenidos, Empresa creadora de contenidos, Banco, Cliente suscriptor, Usuario amparado y Prospecto temporal), los productos (Contenidos) y los procesos (M1: Pago de los productos). \n\nSe observa la relación entre los actores y los procesos, así como la interacción entre ellos a través de los canales (R1, R2, R3, I1, I2, D1, D2, D3). \n\nEl Banco carga el valor de la suscripción a la tarjeta de crédito del cliente. \n\nLa estructura de negocio describe cómo Netflix interactúa con sus proveedores de contenido y cómo gestiona las suscripciones y pagos de sus clientes. \n\nSe puede apreciar la canalización de información y la relación entre los diferentes actores del negocio. \n\nLos conceptos del metamodelo BAC que aparecen son: \n\n*   Actores (Proveedor de licencias de contenidos, Empresa creadora de contenidos, Banco, Cliente suscriptor, Usuario amparado y Prospecto temporal)\n*   Productos (Contenidos)\n*   Procesos (M1: Pago de los productos)\n*   Relaciones (R1, R2, R3, I1, I2, D1, D2, D3) \n*   Recursos (no se observan explícitamente)",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "62",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p63": {
+    "text": "[Figura en p.63] Esta figura presenta una sección del material del curso ISIS-2403 Arquitectura Empresarial de la Universidad de los Andes, específicamente relacionada con el metamodelo Business Architecture Canvas (BAC). Se muestra una parte de las fichas técnicas simplificadas de los canales, identificadas como artefacto BAC-03. \n\nSe pueden observar varios elementos del metamodelo BAC:\n\n*   **Actores (o Roles):** Se identifican diferentes tipos de actores o roles, como \"suscriptores\", \"amparados\" y \"prospectos\".\n*   **Procesos (o Actividades):** Se listan actividades asociadas a cada categoría de actores, como \"Registrar la información de un suscriptor\" (R1.1), \"Permitir al usuario recorrer el catálogo de contenidos y seleccionar el contenido que desea observar o descargar\" (R2.1), entre otras.\n*   **Relaciones:** Se establecen relaciones entre actores y actividades, mostrando cómo interactúan. Por ejemplo, los suscriptores pueden realizar actividades como seleccionar contenido (R1.5) y recibir contenido seleccionado (D1.1).\n\nEstas fichas describen cómo los diferentes actores interactúan con el sistema y cómo se distribuye el contenido según las necesidades de cada grupo de usuarios.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "63",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p64": {
+    "text": "[Figura en p.64] La figura presentada en el material del curso ISIS-2403 Arquitectura Empresarial de la Universidad de los Andes describe la estructura de negocio de un modelo de plataforma de contenidos.\n\nSe puede observar:\n\n*   **Actores**: \n    *   Suscriptor\n    *   Proveedor \n    *   Empresa productora\n    *   Banco\n*   **Productos**: \n    *   Contenido\n    *   Suscripciones\n*   **Procesos**:\n    *   A1.2 - Contratar las licencias con el proveedor y pagar el valor correspondiente\n    *   A1.3 - Recibir las licencias y agregar el contenido nuevo a la plataforma\n    *   A2 - Aprovisionamiento de contenidos con empresas productoras\n    *   M1 - Monetización por los pagos de suscripciones\n*   **Relaciones**:\n    *   El suscriptor paga una suscripción a la plataforma y puede acceder al contenido.\n    *   La plataforma contrata licencias con proveedores de contenido y paga el valor correspondiente.\n    *   La plataforma realiza el cobro de la suscripción a través de una operación sobre la tarjeta de crédito registrada por el suscriptor.\n\nSe puede observar una estructura de negocio que involucra a varios actores, productos y procesos. La plataforma actúa como intermediario entre los suscriptores y los proveedores de contenido, y también entre los suscriptores y el banco. \n\nLos conceptos del metamodelo Business Architecture",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "64",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p65": {
+    "text": "[Figura en p.65] La imagen muestra la estructura de negocio de un modelo de comercio electrónico, específicamente el artefacto **BAC-07**. Éste representa la interacción entre actores y flujos de productos e información.\n\nSe identifican actores como **Amazon**, **proveedores de marca propia**, **bodegas de productos propios** y **de terceros**, **vendedores** y **compradores**. \n\nLos **procesos** involucrados incluyen el aprovisionamiento, la venta de productos, el pago y la entrega de productos.\n\nLas **relaciones** entre actores se establecen a través de canales de comunicación como **R1** (relacionamiento con los vendedores), **R2** (interacción con compradores) y **A1** y **A2** (aprovisionamiento).\n\nSe observa una **estructura de negocio** que involucra la interacción entre actores internos (Amazon, bodegas) y externos (vendedores, compradores), mostrando cómo se gestionan los productos y la información a través de diferentes canales.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "65",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p66": {
+    "text": "[Figura en p.66] Esta figura presenta una parte de la Arquitectura Empresarial de un modelo de negocio de una plataforma de comercio electrónico, probablemente Amazon.\n\nSe pueden identificar los siguientes elementos:\n\n*   **Procesos:** Se presentan varios procesos y subprocesos identificados con una etiqueta (R1.3, R1.4, R2.1, etc.), que describen las actividades relacionadas con el manejo de la plataforma y las interacciones con compradores y vendedores. Estos procesos se agrupan en categorías como Relacionamiento con los compradores, Aprovisionamiento de productos de marca propia, Aprovisionamiento de productos de un vendedor, Pagos hacia los vendedores y Distribución de productos hacia los compradores.\n\n*   **Actores:** No se identifican explícitamente los actores en la imagen. Sin embargo, se puede inferir la existencia de al menos dos actores principales: el **comprador** y el **vendedor**.\n\n*   **Productos:** No se identifican productos en la imagen.\n\n*   **Relaciones:** Se pueden observar relaciones entre los procesos, como por ejemplo, el proceso *R2.1* (Permitir a un comprador registrarse en la plataforma) se relaciona con *R2.2* (Permitir a un comprador buscar los productos de su interés).\n\nEn resumen, esta figura muestra una parte de la Arquitectura Empresarial de un modelo de negocio de una plataforma de comercio electrónico, enfocándose en los procesos de la plataforma.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "66",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p67": {
+    "text": "[Figura en p.67] La figura describe parte de un modelo de negocio correspondiente al curso de Arquitectura Empresarial (ISIS-2403) en la Universidad de los Andes. En esta figura describen 2 canales de la empresa: M2 y I1, evidenciando el metamodelo BAC, mostrando los proceso de **cobro a los compradores** (M2) y **relacionamiento con vendedores y compradores** (I1). De igual manera se muestra la **tabla de productos**  (BAC-81) con un ejemplo de un producto.\n\nSe puede observar la relación entre **procesos** como M2, M2.1 e I1.1; un **producto** como P1 llamado **Libros para colegio**; **tipo de producto** y **descripción del producto**; con estos elementos se puede evidenciar la relación entre **un producto** (P1) con los **procesos** (M2, I1). \n\nEn conclusión, esta figura muestra una parte de un modelo de negocio que relaciona los procesos de la empresa con un producto.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "67",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p68": {
+    "text": "[Figura en p.68] La figura presenta un ejemplo de modelado de negocio utilizando el metamodelo Business Architecture Canvas (BAC). Se observan los siguientes elementos: \n\n*   **Catálogo de actores (BAC-01):** Un cliente identificado como \"Estudiante\" (A1).\n*   **Portafolio de servicios (BAC-02):** El servicio de \"Vender libros a estudiantes de colegio a través de librerías\" (S1), relacionado con el actor (A1) y el producto (P1).\n*   **Estructura de negocio (artefacto BAC-07):** Un modelo de flujo de procesos que involucra al autor como proveedor de insumos, la editorial de los Alpes y sus bodegas central y de ciudad, la librería y los clientes finales (estudiantes y colegios).\n*   **Fichas técnicas (simplificadas) de los canales (artefacto BAC-03):** Se describen los procesos de aprovisionamiento de insumos, contenidos y distribución interna.\n\nEstos elementos ilustran cómo el metamodelo BAC ayuda a estructurar y visualizar la arquitectura empresarial de un negocio de venta de libros.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "68",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p69": {
+    "text": "[Figura en p.69] Esta figura presenta un modelo de procesos de negocio utilizando el metamodelo Business Architecture Canvas (BAC). Muestra las actividades de una editorial de libros, desde la elaboración de libros hasta su distribución y venta.\n\nSe pueden identificar los siguientes conceptos:\n\n*   **Actores**: No se observan explícitamente, pero se infieren actores como la editorial, librerías, colegios y estudiantes.\n*   **Productos**: Libros.\n*   **Procesos**: Se detallan en 7 categorías:\n    *   D1: Distribución interna de la bodega central a la bodega local.\n    *   D2: Distribución externa de la bodega local a la librería.\n    *   R1: Relacionamiento de la editorial con las librerías.\n    *   R2: Relacionamiento de la editorial con los colegios de una ciudad.\n    *   M1: Monetización - pago de la librería a la editorial.\n    *   T1: Elaboración de libros.\n    *   I1 e I2: Canales indirectos.\n\nLas relaciones observadas son entre procesos y entre actores. Por ejemplo, la distribución de libros (D1 y D2) se relaciona con la elaboración de libros (T1) y el relacionamiento con librerías (R1).",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "69",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p70": {
+    "text": "[Figura en p.70] La figura presenta un ejemplo de caso de estudio de modelado de negocio relacionado con LeGiTech, una empresa digital que interactúa con sus clientes mediante una aplicación móvil para proveer información legal. Se incluye un catálogo de actores (BAC-01) con dos actores: \n\n| **ID** | **Nombre** | **Tipo** | **Descripción** |\n| :----: | :--------: | :------: | :----------------------------------------------------------------------: |\n|   A1   | Cliente no suscriptor |   Usuario  |       Persona con acceso sin pago a información legal que ofrece la empresa.      |\n|   A2   |   Cliente suscriptor   |   Cliente  | Persona que paga una mensualidad por servicios básicos. |\n\nSe pueden observar los conceptos de **actores** y **tipos de actores**. Las relaciones entre estos actores y la empresa sugieren una estructura de **interacción**. Estos actores interactúan con la empresa a través de la aplicación móvil, evidenciando **procesos** de suscripción y uso de servicios.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "70",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p71": {
+    "text": "[Figura en p.71] La figura presenta una porción de un modelo de arquitectura empresarial basado en el metamodelo Business Alignment Cube (BAC). Se observan dos tablas:\n\n1. **Actores (BAC-01)**: Se listan los actores del sistema, como \"Cliente Premium\", \"Cliente comprador\" y \"Cliente publicidad\", junto con sus descripciones.\n\n2. **Portafolio de servicios (BAC-02)**: Describe los servicios ofrecidos, como \"Vender la entrega de publicidad hacia los clientes no suscriptores\" y \"Vender formatos y modelos de contratos\".\n\nSe puede observar la relación entre actores y servicios a través de la columna \"ID Actores\". Por ejemplo, el servicio S1 se relaciona con el actor A5 (Cliente publicidad).\n\nAparecen conceptos como: \n\n*   **Actores (BAC-01)**: Entidades que interactúan en el sistema.\n*   **Portafolio de servicios (BAC-02)**: Conjunto de servicios ofrecidos.\n*   **Relaciones**: Conexiones entre actores y servicios.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "71",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p72": {
+    "text": "[Figura en p.72] La figura presenta un catálogo de componentes de un sistema de información jurídica llamado LeGiTech. Se observan los siguientes elementos del metamodelo *Business Architecture Canvas* (*BAC*):\n\n*   **Actores**: Se identifican varios actores, como los clientes (publicidad, no suscriptor, comprador, suscriptor y *premium*).\n*   **Productos**: Se destacan componentes como el depósito de leyes y decretos, depósito de jurisprudencia, base de conocimiento, formatos y modelos de contratos y contenido comercial.\n*   **Procesos**: No se observan procesos explícitamente, pero se infieren flujos de información entre los componentes.\n*   **Relaciones**: Se muestra cómo interactúan los actores con los productos. Por ejemplo, los clientes *premium* acceden a contenido exclusivo.\n\nEsta figura ilustra la arquitectura de negocio de LeGiTech, mostrando la interacción entre actores y componentes del sistema.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "72",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p73": {
+    "text": "[Figura en p.73] La figura muestra dos patrones de negocio: Comercialización de productos de terceros (P1) y Alquiler de bienes propios (P2). En P1, un proveedor ofrece productos a una tienda, que los vende a clientes a través del canal D. Aparecen los actores: proveedor, tienda y cliente; los productos: productos; y la relación: venta. En P2, una empresa ofrece bienes para alquilar a clientes que los usan temporalmente. Se observan actores: cliente y empresa; productos: bienes; procesos: alquiler; y relaciones de acceso y uso. Ambos patrones ilustran estructuras de negocio con actores, productos y procesos definidos, permitiendo visualizar flujos y relaciones clave en estos modelos de negocio según el metamodelo BAC.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "73",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p74": {
+    "text": "[Figura en p.74] La figura muestra los patrones de negocio $P3$, $P4$ y $P5$:\n\n*   $P3$: Manufactura y venta de productos: muestra un flujo en el que los insumos, adquiridos de un proveedor, son transformados en productos terminados, almacenados en una bodega de productos y entregados al cliente final.\n*   $P4$: Alquiler de bienes de terceros: adaptación del patrón $P2$ con bienes de terceros. Un cliente dueño alquila sus bienes físicos a una empresa. \n*   $P5$: Manejo de dinero: relacionado con bancos, préstamos y transferencias de dinero.\n\nEn cuanto a los conceptos del metamodelo $BAC$, se pueden identificar:\n\n*   **Actores**: cliente, cliente dueño, proveedor.\n*   **Productos**: bienes para alquilar, insumos, productos terminados, dinero.\n*   **Procesos**: Manufactura y venta de productos, alquiler de bienes de terceros, manejo de dinero.\n\nLas relaciones entre los componentes reflejan la interacción entre actores y productos, y la estructura de cada patrón de negocio.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "74",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p75": {
+    "text": "[Figura en p.75] La figura representa dos patrones de negocio: **P6: Entrega de productos a domicilio** (ejemplo: Rappi) y parte de la descripción de **P7: Educación** (ejemplo: Universidades). \n\nEn **P6**, se observan los actores: **Cliente**, **Domiciliario** y **Tienda**; y el **Negocio de entregas**. El **producto** es el pedido. Se identifican procesos como **R1: pedido del cliente**, **R2: solicitud de entrega a tienda**, **R3: asignación de domiciliario**, **D1: entrega de pedido a domiciliario**, **D2: entrega a cliente**, **M1: pago de tienda a negocio**, **M2: pago de cliente a negocio** y **D3: pago de negocio a domiciliario**.\n\nEn **P7**, se anuncia parcialmente el patrón, pero no se alcanzan a observar los flujos.\n\nSe pueden observar estructuras de **cadena de valor** y **red de actores**.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "75",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p76": {
+    "text": "[Figura en p.76] La figura muestra tres patrones de negocio: Centro de enseñanza, Agricultura (y ganadería) y Software como servicio (SaaS). \n\nEstos patrones ilustran cómo las empresas interactúan con sus clientes y proveedores. \n\nEn el metamodelo BAC (Business Architecture Canvas), se pueden observar los siguientes conceptos:\n\n*   **Actores**: \n    *   Centro de enseñanza\n    *   Estudiante \n    *   Proveedor\n    *   Cultivos\n    *   Intermediario\n    *   Cliente\n    *   Software en producción\n\n*   **Productos y servicios**: \n    *   Formación \n    *   Diploma\n    *   Productos\n    *   Insumos\n\n*   **Procesos y canales**:\n    *   M \n    *   D \n    *   R \n    *   T1 \n    *   T2 \n    *   I \n\n*   **Relaciones**: \n    *   El Centro de enseñanza brinda formación a los estudiantes.\n    *   Los productores agrícolas venden productos a través de intermediarios a los clientes.\n\nEstos patrones de negocio modelan estructuras comunes en diversos sectores, utilizando elementos clave del metamodelo.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "76",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p77": {
+    "text": "[Figura en p.77] La figura presenta tres patrones de negocio: P10 (Desarrollo de soluciones a la medida), P11 (Rifas y loterías) y P12 (Marketplace). \n\nEn P10, se observa un **actor** denominado **Proveedor** de **insumos** que alimenta al **proceso** de **Requerimientos** e **Insumos** que produce una **solución** a la medida para un **cliente**. \n\nEn P11, hay dos tipos de **actores** **clientes**: el que compra una boleta y el que gana un **premio**. \n\nEn P12 no hay una descripción asociada.\n\nSe puede observar **relaciones** de comunicación (puntos negros) y **de uso** (líneas discontinuas). \n\nAparecen **productos** como **soluciones**, **boletas**, **premios** y **oportunidades de negocio** en un **marketplace**. \n\nEstos patrones ilustran diferentes estructuras y procesos en la **arquitectura empresarial**, reflejando conceptos del **metamodelo** **BAC** como **actores**, **productos**, **procesos** y **relaciones**.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "77",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p78": {
+    "text": "[Figura en p.78] La figura describe los patrones de negocio P13: Franquicias y P14: Negocio Multinivel, según el metamodelo Business Architecture Canvas (BAC).\n\nEn el P13, se presenta un modelo de negocio donde una empresa vende franquicias a clientes (canal R1) y les proporciona insumos (M1) y apoyo (D1). Estos clientes, ahora franquiciados, venden productos o servicios a clientes finales (canal I1) utilizando los insumos proporcionados. Por otro lado, en el P14, un negocio multinivel se basa en la venta de productos (canal R) a clientes (socios) que luego distribuyen estos productos a compradores finales (canales I1 e I2). En ambos casos, se ilustran las interacciones entre actores (clientes, franquiciados, socios y compradores), los productos o servicios ofrecidos (insumos o productos finales) y las relaciones comerciales (canales de distribución). \n\nEstos patrones evidencian cómo las empresas estructuran sus operaciones y flujos de valor para generar ingresos a través de diferentes modelos de negocio.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "78",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p79": {
+    "text": "[Figura en p.79] La figura representa dos patrones de negocio: **P15 Crowdfunding** y **P16, Trámites en una entidad del estado.** \n\nEn **P15**, se observa un modelo de negocio con dos tipos de clientes: el cliente emprendedor que busca financiación para su proyecto a través de una plataforma y el cliente inversor que invierte en dichos proyectos. Los actores presentes son: Cliente emprendedor, Cliente inversor y la plataforma de *crowdfunding*. Los productos son los fondos para proyectos. Los procesos incluyen registro de proyectos, inversión, financiación y distribución de utilidades. Relaciones: el cliente emprendedor se relaciona con la plataforma (R1) para recibir financiación (D1) y ésta con el cliente inversor (R2) quien a su vez invierte (D2).\n\nEn **P16,** el patrón de negocio presenta una relación entre un ciudadano y una entidad del estado, donde el ciudadano realiza trámites y la entidad los gestiona. Actores: Ciudadano, entidad del estado. Productos: trámites. Procesos: solicitud de trámites (R1 o R2), pago de trámites (M) y entrega de resultados (D). Relaciones: el ciudadano solicita el trámite (R1 o R2) y la entidad gestiona (D). \n\nSe observan conceptos del **metamodelo** Business Activity Canvas (BAC), como **actores, productos, procesos** y **relaciones.**",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "79",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p80": {
+    "text": "[Figura en p.80] Esta figura presenta tres patrones de negocio: P17 Información, P18 Publicidad y P19 Negocios de suscripción.\n\nEn P17, se observa un proceso de recolección de información en bruto, procesamiento y venta de información procesada a clientes. Aparecen actores: *cliente*, *fuentes de información*; productos: información en bruto, información procesada; procesos: *T* (procesamiento) y relaciones de *A* (recolección), *D* (venta) y *M* (pago).\n\nEn P18, se muestra la publicidad a través de un medio de comunicación hacia usuarios. Se identifican actores *cliente publicidad*, *usuario* y *contenido de publicidad*; procesos: *R1* (exhibición) y *R2* (conexión).\n\nNo se alcanzan a leer los detalles de P19. \n\nSe representan estructuras de modelo de negocio usando el metamodelo Business Architecture Canvas (BAC).",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "80",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p81": {
+    "text": "[Figura en p.81] En la parte superior de la imagen se puede observar un modelo de negocio de **suscripción** de clientes. El cliente recibe **productos** de negocio con cierta **frecuencia** a través del **canal** $D$. Para esto, el cliente registra su **tarjeta de crédito** a través del **canal** $R$ e informa al banco que realizará pagos **periódicos** de la suscripción a través del canal $I$. \n\nEn la parte inferior de la imagen se puede observar un modelo de **economía circular** basado en el **patrón** $P20$. El cliente interactúa con la empresa mediante **canales** $D1$ (puntos de venta) o $D2$ (puntos de recolección) y entrega o recibe **productos**. Luego, los productos pueden fluir a través de canales en sentido **inverso** ($RT1$, $RT2$), para ser **reutilizados** o **reciclados**. \n\nEn ambos modelos aparecen **actores** (cliente, banco), **productos** (objetos de negocio y productos) y **canales** de interacción ($D$, $R$, $I$, $D1$, $D2$, $RT1$, $RT2$). Las **relaciones** entre los actores, productos y canales reflejan la **estructura** de los **procesos** de negocio.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "81",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p83": {
+    "text": "[Figura en p.83] La figura muestra el Business Canvas de Osterwalder, una herramienta para modelar y describir modelos de negocio. Se compone de 9 bloques que representan diferentes aspectos clave de un negocio:\n\n*   **Socios**: Lista de proveedores y socios de negocio\n*   **Actividades**: Actividades clave que son cruciales dentro del negocio y materializan la propuesta de valor\n*   **Recursos**: Recursos clave para la operación del negocio\n*   **Propuesta de valor**: Descripción del objeto de negocio y de la estrategia de diferenciación del negocio\n*   **Relaciones**: Descripción de las formas de relacionarse con los clientes\n*   **Canales**: Descripción de los canales de distribución\n*   **Clientes**: Segmentos de clientes hacia los cuales está dirigido el negocio\n*   **Costos**: Estructura de costos del negocio\n*   **Ingresos**: Estructura de los ingresos que recibe el negocio\n\nEn el metamodelo BAC (Business Architecture and Capability), los siguientes conceptos se pueden vincular:\n\n*   **Actores**: Socios (proveedores y socios de negocio), Clientes (segmentos de clientes)\n*   **Productos/ Servicios (Propuesta de valor)**: Propuesta de valor\n*   **Procesos/Actividades**: Actividades (actividades clave)\n*   **Relaciones**: Relaciones (formas de relacionarse con los clientes), Canales (canales de distribución)\n*   **Estructura/",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "83",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p84": {
+    "text": "[Figura en p.84] La figura muestra dos modelos de negocio de un restaurante: Resto-0 (Figura 34) y Resto-1 (Figura 35). \n\nEn Resto-0, el metamodelo Business Activity Canvas (BAC) incluye: \n\n*   **Actores**: \n    *   Cliente presencial \n    *   Proveedor \n*   **Productos y servicios**: \n    *   Comida preparada \n*   **Procesos**: \n    *   Compra de insumos \n    *   Preparación de comida \n*   **Canales**: \n    *   R1 (comunicación presencial) \n    *   D1 (entrega de comida) \n    *   A1 (insumos) \n    *   T1 (transformación de insumos en comida) \n\nEn Resto-1, se agregan: \n\n*   **Actores**: \n    *   Cliente a domicilio \n*   **Canales**: \n    *   R2 (comunicación virtual) \n    *   M2 (medio de pago) \n    *   D2 (entrega a domicilio) \n\nAmbos modelos comparten una estructura similar pero se diferencian en la inclusión de nuevos canales para atender al cliente a domicilio en Resto-1, ampliando la oferta de servicios.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "84",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p85": {
+    "text": "[Figura en p.85] La figura 36 presenta el modelo de negocio **Resto-2**, que integra el concepto de **\"cocina oculta\"** o **dark kitchen**. Este modelo optimiza la entrega de comida a domicilio mediante puntos de preparación estratégica para reducir costos, sin atención presencial.\n\nSe observan los siguientes elementos del metamodelo **BAC (Business Architecture Canvas)**:\n- **Actores**: \n  - Cliente presencial\n  - Cliente domicilio\n  - Proveedor de insumos\n  - Cocina oculta\n- **Productos**: \n  - Comida preparada\n- **Procesos**:\n  - Preparación de comida\n  - Entrega a domicilio\n- **Relaciones**:\n  - El cliente presencial interactúa a través de D1 y el cliente a domicilio a través de R2 y D2. \n  - La cocina oculta recibe insumos vía D8.\n\nEste modelo optimiza costos al centralizar la preparación y descentralizar la entrega.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "85",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p86": {
+    "text": "[Figura en p.86] La figura 37 muestra el modelo de negocio Resto-3, representando los actores, productos y procesos relacionados con la entrega de comidas preparadas a clientes.\n\nSe puede observar:\n\n*   **Actores (Roles):** Cliente presencial, Cliente domicilio, Cliente Rappi, Proveedor de insumos.\n*   **Productos:** Comida preparada, Comida congelada.\n*   **Procesos:** \n\n    *   T1: Cocina oculta\n    *   T2: Empacado y congelado de comida (no aparece en esta figura, pero se menciona en el texto).\n*   **Relaciones:**\n\n    *   El Cliente presencial y Cliente domicilio interactúan directamente con Resto-3.\n    *   El Cliente Rappi interactúa a través de la plataforma Rappi.\n    *   El Proveedor de insumos suministra ingredientes a Resto-3.\n\nEste modelo ilustra la estructura de un negocio de comida que opera bajo diferentes canales de distribución y logística, integrando actores internos y externos, y diferentes modalidades de entrega de comidas. Se resaltan las diferencias con el modelo Resto-2 y se introduce la idea de un nuevo modelo, Resto-4.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "86",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p87": {
+    "text": "[Figura en p.87] La figura 38 presenta el modelo de negocio **Resto-4**, que representa una extensión de los servicios ofrecidos por un restaurante. Se observa la interacción entre diversos actores: **proveedores de insumos**, **clientes** (presencial, Rappi, empresa) y **empleados**. Los **productos** clave son la **comida preparada** y **congelada**. \n\nSe identifican **procesos** como la **preparación** y **distribución** de comida. Las **relaciones** ilustran la integración con servicios de delivery como Rappi y la venta a clientes empresariales. \n\nEste modelo incluye elementos del metamodelo **BAC** (Business Architecture Canvas), como **actores** (clientes, proveedores), **procesos** (cocinado, entrega) y **productos** (comida preparada, congelada). Se observan estructuras de **colaboración** entre actores y **flujos de interacción**. \n\nEn resumen, esta figura modela la arquitectura de un restaurante que diversifica su negocio a través de nuevos canales de distribución.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "87",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p88": {
+    "text": "[Figura en p.88] La figura presenta el modelo de negocio de un restaurante llamado Resto-5, diseñado con el metamodelo Business Architecture Canvas (BAC). Se observan 8 actores (proveedor de insumos, supermercado, clientes, etc.) y 16 componentes de negocio que interactúan mediante 29 canales. \n\nSe identifican productos como comida preparada, comida congelada e insumos. \n\nLas relaciones entre actores y componentes revelan la estructura del negocio: proveedores abastecen insumos, que se transforman en productos finales ofrecidos a clientes a través de canales como servicios presenciales, domiciliarios, franquicias y Rappi.\n\nEl modelo muestra la interconexión entre actores y procesos de entrega de productos, evidenciando la dinámica del negocio. \n\nSe representan relaciones de entrega (R) y medios de entrega (M) y despliegue (D) entre los actores y los componentes de negocio, ilustrando cómo se articulan las operaciones del restaurante.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "88",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p89": {
+    "text": "[Figura en p.89] La figura 40 ilustra el modelo de negocio de miRopa, un ejemplo de economía circular. Muestra cómo miRopa interactúa con actores para vender ropa nueva y usada.\n\n**Actores involucrados:**\n\n*   **Proveedor de insumos:** proporciona materias primas.\n*   **Proveedor de servicio de desecho:** gestiona la ropa usada.\n*   **Comprador de ropa:** adquiere prendas.\n\n**Productos:**\n\n*   **Ropa:** producto principal.\n\n**Procesos y relaciones:**\n\n*   **Flujo de ropa nueva:** T1 (proveedor → miRopa) → D2 (miRopa → puntos de venta).\n*   **Flujo de ropa usada:** RT2 (cliente → miRopa) → T3 (miRopa → depósito de partes) o reutilización.\n*   **Canales:** R1, M1, D1 para venta; RT1 para retorno.\n\nSe observan estructuras de logística inversa y ciclos de vida extendidos de productos, integrando conceptos del metamodelo Business Architecture Canvas (BAC).",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "89",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p90": {
+    "text": "[Figura en p.90] La figura 41 del material del curso ISIS-2403 Arquitectura Empresarial de la Universidad de los Andes muestra un modelo de negocio que involucra a tres actores: Aseguradora, Corredores de seguros y Negocio. El Negocio interactúa con Corredores de seguros para comprar una póliza a través del canal A1. Corredores de seguros, a su vez, interactúa con Aseguradora por el canal R1 para obtener la póliza.\n\nSe pueden observar los siguientes conceptos del metamodelo Business Architecture Canvas (BAC):\n\n*   **Actores**: Aseguradora, Corredores de seguros y Negocio.\n*   **Productos**: Póliza de seguro.\n*   **Procesos**:  Compra de la póliza.\n*   **Relaciones**: \n    *   Asociación entre Negocio y Corredores de seguros\n    *   Asociación entre Corredores de seguros y Aseguradora\n\nEsta figura representa una red de empresas que interactúan para ofrecer un servicio de seguros.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "90",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p91": {
+    "text": "[Figura en p.91] La Figura 42 ilustra una red de empresas de logística. Muestra la interacción entre un proveedor de insumos, LaSuper (cadena de tiendas), y un cliente final. Seis actores (proveedor, LOG-1, LaSuper, LOG-2, bodegas y cliente) intercambian productos (insumos y productos terminados) y pagos a través de distintos canales (R1, M1, A1, A2, R2, M2, etc.). \n\nSe puede observar el concepto de **Actor** (proveedor, LaSuper, LOG-1, LOG-2, cliente), **Producto** (insumos y productos), **Relaciones** (interacciones entre actores) y **Procesos** implicados en el aprovisionamiento (A1, A2, A3), las ventas digitales (R2, M2, D1), pago (M3, M4) y la logística.\n\nEsta red de empresas muestra la interconexión de diversos actores externos en la cadena de suministro. Destaca la importancia de incluir actores como LOG-1 y LOG-2 como parte integral del modelo de negocio de LaSuper. Seis relaciones de **colaboración** entre los actores. Aparecen **procesos** como el aprovisionamiento, pago y logística.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "91",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p92": {
+    "text": "[Figura en p.92] La Figura 43 ilustra la arquitectura de un sistema de pago con tarjeta de crédito. \n\nMuestra los actores (Cliente, Comercio, Banco emisor, Banco adquiriente, Cámara de compensación) y las relaciones entre ellos. Los productos involucrados son la tarjeta de crédito y el pago. \n\nSe pueden observar los siguientes conceptos del metamodelo Business Architecture Canvas (BAC):\n\n*   **Actores**: Cliente, Comercio, Banco emisor, Banco adquiriente, Cámara de compensación, Franquicia Conciliador (VISA), Red de pagos (Redeban, Credibanco).\n*   **Procesos**: \n    *   Proceso de autorización (R2)\n    *   Proceso de transferencia (D1, I4, I7)\n    *   Proceso de conciliación\n*   **Relaciones**: \n    *   El Cliente posee una tarjeta emitida por el Banco emisor.\n    *   El Comercio recibe pagos del Banco adquiriente.\n    *   El Banco emisor y el Banco adquiriente interactúan con la Cámara de compensación.\n\nSe observa una estructura de pagos, con un flujo de autorización y transferencia de fondos.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "92",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p93": {
+    "text": "[Figura en p.93] La figura 44 ilustra un modelo de préstamos de un fondo de empleados. Muestra un **subsistema** o **caso de negocio** relacionado con préstamos otorgados por un fondo de empleados a sus afiliados. \n\nLa estructura del modelo describe los **agentes** o **actores** involucrados:\n\n*   El cliente afiliado\n*   La empresa\n*   El fondo de empleados\n*   Un comercio\n\nSe identifican **procesos** o **flujos** como:\n\n*   El trámite del préstamo (R1)\n*   Contacto con el comercio (R2)\n*   Transferencia de dinero (D1)\n*   Entrega de libranza (R3)\n\nTambién se observa un **producto** o **servicio** denominado \"Libranzas\".\n\nLas **relaciones** entre actores y flujos de procesos están dadas por:\n\n*   El afiliado solicita un préstamo (R1) al fondo de empleados.\n*   El fondo de empleados gestiona el pago con un comercio (R2) y transfiere dinero (D1).\n*   El fondo de empleados entrega una libranza (R3) a la empresa.\n\nSe puede observar la relación entre actores a través de los flujos de procesos.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "93",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p94": {
+    "text": "[Figura en p.94] La figura muestra la integración de una **propuesta de valor (PV)** en un **modelo de negocio (M1)**, resultando en un **modelo de negocio actualizado (M2)**. El **modelo de negocio inicial (M1)** incluye un **objeto de negocio (ON1)**, que representa los productos o servicios ofrecidos. Al incorporar la **propuesta de valor (PV)**, se transforma en **M2**, con un nuevo **objeto de negocio (ON2)**, reflejando cómo la organización entrega valor a sus actores. \n\nEn el metamodelo **BAC (Business Architecture Canvas)**, se observan conceptos como **actores** (implícitos en la propuesta de valor), **productos** (ON1 y ON2) y **relaciones** entre el modelo de negocio y su objeto. \n\nSe puede observar la relación de **transformación** entre M1 y M2, y **alineación** entre la propuesta de valor y el objeto de negocio. Esto refleja cómo la arquitectura empresarial busca entregar valor a través de la evolución del modelo de negocio.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "94",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p96": {
+    "text": "[Figura en p.96] La figura muestra un artefacto denominado **BAC-21, catálogo de decisiones estratégicas**. Este artefacto registra decisiones estratégicas vinculadas a la **arquitectura empresarial** de un negocio. En este caso, se presenta una decisión estratégica con los siguientes elementos:\n\n*   **ID:** D1\n*   **Intención:** Entregar valor adicional a los clientes\n*   **Nombre:** Esquema de puntos\n*   **Modelo:** Negocio\n*   **Descripción:** Se manejará un esquema de puntos que se le asignarán a los clientes por cada compra y que podrán cambiarse por distintos productos y servicios.\n\nEn este artefacto, aparecen conceptos del **metamodelo** **BAC** como:\n\n*   **Actores:** clientes\n*   **Productos:** puntos, productos y servicios\n\nSe puede observar la relación entre la decisión estratégica y el modelo de negocio, evidenciando cómo una decisión impacta en el modelo de negocio. Esto permite visualizar la estructura de decisiones estratégicas que pueden influir en el modelo de negocio de una organización.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "96",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p97": {
+    "text": "[Figura en p.97] La Figura 46 muestra la estructura de negocio de una tienda de ropa que incluye un proveedor, una tienda de ropa con su bodega, y un cliente. Se identifican actores como el proveedor, la tienda de ropa, la bodega de ropa y el cliente. Los productos o servicios involucrados son la ropa suministrada por el proveedor y vendida por la tienda. \n\nEn la Figura 47, se introduce una empresa de manejo de puntos y un comercio aliado, ampliando la estructura con un programa de puntos. Aparecen nuevos actores: la empresa de manejo de puntos y el comercio aliado. \n\nSe observan relaciones como \"suministra\" entre proveedor y tienda de ropa, \"vende\" entre tienda de ropa y cliente, y \"redimidos\" entre cliente y comercio aliado. \n\nLos conceptos del metamodelo Business Activity Concept (BAC) que se pueden apreciar son: actores (proveedor, tienda de ropa, bodega de ropa, cliente, empresa de manejo de puntos, comercio aliado), productos/servicios (ropa, puntos), y relaciones (suministro, venta, redención). Esto refleja una arquitectura empresarial que integra múltiples entidades y servicios para mejorar la experiencia del cliente.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "97",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p98": {
+    "text": "[Figura en p.98] La figura 48 del material del curso ISIS-2403 Arquitectura Empresarial de la Universidad de los Andes representa un modelo de negocio para una tienda de ropa que acepta ropa usada como parte de pago de una nueva compra. Se observa un **Proveedor (A1)**, una **tienda de ropa** y un **cliente**. \n\nEntre los conceptos del metamodelo **Business Architecture Canvas (BAC)** que se pueden identificar en la figura se encuentran: \n\n*   **Actores:** Proveedor, Tienda de ropa nueva (Bodega de ropa) y Cliente.\n*   **Productos:** Ropa nueva (P1) y Ropa usada (R1).\n*   **Procesos/Actividades:** A1 (Proveedor), M1 (canal de comunicación con el cliente) y D1 (decisión estratégica).\n*   **Relaciones:** El proveedor (A1) proporciona ropa nueva a la tienda de ropa. El cliente proporciona ropa usada a la tienda de ropa a través del canal M1.\n\nEsta figura ilustra cómo una decisión estratégica (D2) impacta en la estructura de negocio de la tienda de ropa, al incluir la aceptación de ropa usada como forma de pago.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "98",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p99": {
+    "text": "[Figura en p.99] La figura describe tres escenarios de decisión estratégica relacionados con el modelo de negocio de una tienda de ropa, enfocada en la arquitectura empresarial. Se presentan casos hipotéticos sobre la importación de ropa, nichos de clientes específicos y responsabilidad social. \n\nSe puede observar el concepto de **canales** del metamodelo **BAC** (Business Architecture Canvas), los cuales interactúan con los clientes. También, se puede inferir que aparecen **procesos** al mencionar actividades y flujos de valor.\n\nLas relaciones observadas son entre **decisiones estratégicas** y **actividades del modelo de negocio**, y cómo estas impactan en los **canales de distribución** y en la **estructura de negocio**. Además, se destaca la importancia de detallar las **actividades** y ajustarlas según sea necesario para reflejar la promesa de valor ofrecida al cliente.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "99",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p101": {
+    "text": "[Figura en p.101] La figura muestra un escenario de negocio con tres canales: R1, A1 y D2. Estos canales interactúan con los actores externos \\(a1\\) (actor), Proveedor (componente) y \\(D2.3\\) (canal de distribución).\n\nEn la Figura 49, se representa un escenario de negocio con 6 actividades y 3 acciones. \n\nLa Figura 50 ilustra la estructura de negocio subyacente, que involucra 3 componentes (Proveedor, A1 y D2), 3 canales (R1, A1 y D2) y los actores externos \\(a1\\) y \\(D2.3\\).\n\nSe pueden observar conceptos del metamodelo BAC como: \n\n*   Componentes (Proveedor, A1, D2)\n*   Canales (R1, A1, D2)\n*   Actores externos (\\(a1\\), \\(D2.3\\))\n*   Relaciones de interacción entre componentes y actores.\n\nEstas figuras describen la estructura y el flujo de un escenario de negocio, mostrando cómo los componentes interactúan a través de canales y cómo los actores externos participan en estas interacciones.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "101",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p102": {
+    "text": "[Figura en p.102] La figura 51 muestra un escenario de negocio de un ejemplo de estructura de negocio. Este representa una secuencia de pasos.\n\nEn este diagrama se puede observar un proveedor y los componentes internos del negocio: E1, R1, D2. Estos componentes tienen relaciones entre sí (flechas continuas) y con actores externos (líneas punteadas). \n\nSe identifican conceptos como:\n\n*   **Canal**: proveedor\n*   **Componentes del negocio:** E1, R1 y D2\n*   **Actividades o acciones:** acción-1, acción-2 y acción-3\n*   **Productos o servicios:** R1.1, R1.5, R1.7, A1.4, A1.8 y D2.3.\n\nEn este escenario de negocio se puede evidenciar la interacción de los componentes del negocio y el proveedor.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "102",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p103": {
+    "text": "[Figura en p.103] La figura presenta un metamodelo de un escenario de negocio, denominado artefacto BAC-08. Este metamodelo describe la estructura de un escenario de negocio, el cual está compuesto por un escenario de negocio que se ejecuta en un canal y se divide en pasos. Cada paso puede representar una actividad de canal o una acción externa.\n\nSe pueden identificar varios conceptos del metamodelo BAC:\n\n*   **Escenario de negocio**: Describe un proceso o flujo de trabajo.\n*   **Servicio de negocio**: Relacionado con la oferta de valor.\n*   **Negocio**: Define el contexto organizacional.\n*   **Empresa**: El alcance de la organización.\n\nLas relaciones observadas son:\n\n*   Un escenario de negocio se compone de pasos.\n*   Un paso puede ser una actividad de canal o una acción externa.\n\nEste metamodelo permite modelar procesos de negocio de manera estructurada.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "103",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p104": {
+    "text": "[Figura en p.104] La figura 53 muestra la estructura de negocio de una tienda simple utilizando notación del metamodelo BAC (Business Architecture Canvas). \n\nSe pueden observar los siguientes elementos del metamodelo:\n\n*   **Actores o Agentes** (cuadrados): Proveedor de productos, Destrictor de vencidos, Tienda y Comprador.\n*   **Artefactos** (cuadrados discontinuos): Bodega y Estantería.\n*   **Relaciones o flujos** (flechas): \n\n    *   Entre actores: A1 (relación entre el proveedor de productos y la tienda) y D1 (relación entre la tienda y el comprador).\n    *   Entre actores y artefactos: D2 (relación entre la bodega y la estantería).\n\nEn cuanto a los conceptos, se observan:\n\n*   **Procesos**: No se observan, pero se puede inferir que hay procesos de compra, almacenamiento y venta.\n*   **Roles**: No se observan.\n\nEsta figura ilustra una estructura básica de una tienda que adquiere productos a proveedores y los vende a compradores, almacenándolos en una bodega y exhibiéndolos en estanterías.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "104",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p105": {
+    "text": "[Figura en p.105] La figura describe dos escenarios de negocio: la compra de productos a un proveedor y la venta de productos en una tienda. Se presentan dos tablas que detallan los pasos y actores involucrados en cada escenario.\n\n**Escenario E1: Compra de Productos**\n\n*   **Actores:** \n    *   Tienda\n    *   Proveedor\n*   **Productos/Resultados:** \n    *   Productos\n    *   Factura\n*   **Procesos/Actividades:** \n    *   Recibir pedido\n    *   Hacer cotización\n    *   Hacer orden de entrega\n    *   Definir fecha de entrega\n    *   Emitir factura de pago\n    *   Recibir pago\n\n**Escenario E2: Venta de Productos en la Tienda**\n\n*   **Actores:** \n    *   Tienda (D1)\n    *   Comprador (R1, M1)\n*   **Productos/Resultados:** \n    *   Productos\n    *   Factura\n*   **Procesos/Actividades:** \n    *   Llegar a la tienda, seleccionar productos y colocar en carrito\n    *   Contestar preguntas del cliente\n    *   Llevar productos a la caja\n    *   Recibir pago\n    *   Pagar productos\n    *   Recibir pago en efectivo y registrar venta\n    *   Empacar y entregar productos\n    *   Sal",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "105",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p106": {
+    "text": "[Figura en p.106] La figura presenta la estructura de negocio de Netflix, desarrollada en el capítulo 4. Incluye un diagrama de estructura de negocio que muestra los actores (Proveedor de licencias de contenido, Empresa creadora de contenidos, Banco, Suscriptor, Usuario Amparado, Prospecto Temporal), los productos (Contenidos) y las relaciones entre ellos. \n\nSe pueden observar los siguientes conceptos del metamodelo BAC:\n\n*   **Actores**: \n    *   Proveedor de licencias de contenido\n    *   Empresa creadora de contenidos\n    *   Banco\n    *   Suscriptor\n    *   Usuario Amparado\n    *   Prospecto Temporal\n*   **Productos**: \n    *   Contenidos\n*   **Procesos**: \n    *   No se observan directamente, pero se pueden inferir de los escenarios presentados en las tablas inferiores (E1: funcionamiento básico de la plataforma, E2: inscripción y pago de la suscripción).\n*   **Relaciones**: \n    *   Relaciones de asociación entre actores y productos.\n\nEstas relaciones y estructuras permiten modelar la arquitectura empresarial de Netflix.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "106",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p107": {
+    "text": "[Figura en p.107] La figura 55 muestra la estructura de negocio de la Editorial de los Alpes. Esta estructura de negocio representa los actores externos (proveedor de insumos, autor, librería, colegio, estudiante), los procesos (A1, A2, T1, D1, D2, I1, I2, I3) y los flujos de interacción entre ellos.\n\nEn esta estructura de negocio, se pueden identificar los siguientes conceptos del metamodelo Business Architecture Canvas (BAC):\n\n*   **Actores**: Proveedor de insumos, Autor, Librería, Colegio, Estudiante.\n*   **Productos**: Insumos, Contenido.\n*   **Procesos**: A1 (Aprovisonamiento de insumos), A2 (Creación de contenido), T1 (Transformación de insumos y contenidos), D1 (Distribución a bodega central), D2 (Distribución a librería), I1 (Venta a estudiante), I2 (Venta a colegio), I3 (Venta a librería).\n\nSe pueden observar relaciones de **colaboración** entre actores para llevar a cabo los procesos, y **flujos de intercambio** de productos entre actores y procesos.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "107",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p108": {
+    "text": "[Figura en p.108] La figura muestra un **caso de estudio de una tienda de ropa a la medida** modelado con **Business Activity Model (BAM)**, que es parte del **metamodelo Business Architecture Change (BAC)**. En esta figura se pueden ver: \n\n*   **2 actores externos:** Insumos y Fabricación, que son proveedores, y Comprador, que es un cliente.\n*   **6 procesos o escenarios:** A1, A2, M1, D1, R1 y E1. \n*   **4 productos:** Depósito de insumos, Ropa para pruebas y Ropa para entregar.\n\nEstos procesos se encuentran relacionados mediante **flujos de productos**, los cuales están denotados por líneas continuas. Por ejemplo, el proceso A1 utiliza el producto Insumos, con el fin de generar el producto Depósito de insumos. \n\nEs importante resaltar que al no aparecer **canales de transformación** entre los componentes externos, esto indica que los proveedores y el cliente no son parte de la empresa que modela.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "108",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p109": {
+    "text": "[Figura en p.109] La figura presenta un escenario de negocio denominado E1: venta de ropa a la medida, estructurado según el metamodelo BAC (Business Architecture Canvas). Se describen 24 pasos en el proceso de venta, desde que un comprador expone sus necesidades hasta que recoge la prenda terminada. \n\nSe identifican dos actores: R1 (rol del proceso de venta) y A1, A2 (roles de la administración). Los productos incluyen la prenda de vestir y los insumos necesarios. \n\nLas relaciones observadas son:\n\n*   **R1:** interacción del cliente con el proceso de venta.\n*   **A1:** gestión de insumos y fabricación inicial.\n*   **A2:** fabricación y entrega de la prenda terminada.\n\nSe muestra la secuencia de actividades y la interacción entre actores para la creación de una prenda a medida.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "109",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p110": {
+    "text": "[Figura en p.110] En la figura se presenta un fragmento de un modelo de procesos de negocio, en el ámbito de la Arquitectura Empresarial.\n\nSe pueden observar cuatro flujos de trabajo (procesos) identificados con los códigos R1, M1, M1.2 y D1, con sus respectivas tareas.\n\n*   R1: \"Ir a la tienda a medirse la prenda terminada y dar el visto bueno.\"\n*   M1: \"Hacer el pago del saldo que debe por la ropa\" y \"Recibir el pago del saldo que el comprador debe por la ropa y entregar la factura de venta\".\n*   D1: \"Entregar la ropa contratada\" y \"Salir de la tienda con la ropa que acaba de comprar\".\n\nSe identifican dos actores: el **comprador** y la **tienda** (probablemente). \n\nEl **producto** es la **ropa**.\n\nSe puede observar la relación de **realización** entre los procesos R1, M1, M1.2 y D1, ya que M1.2 es una subactividad de M1. \n\nAsí mismo, se puede observar una relación de **interacción** entre el **comprador** y la **tienda** en los diferentes procesos.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "110",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p111": {
+    "text": "[Figura en p.111] La figura 57 ilustra los cuatro subdominios estudiados en el contexto del metamodelo *Business Architecture Canvas* (BAC). En ella se puede observar un **actor** (a1) que interactúa con el **producto** (p1) a través del **servicio** (s1). \n\nSe visualiza la **estructura de negocio** compuesta por **componentes**, **canales** y **actividades**, y los escenarios E1 y E2 con líneas de tiempo que representan el comportamiento interno del negocio.\n\nSe resaltan las **rutas** (r1 y r2) que recorre el actor en su relación con el negocio, las cuales comprenden las etapas por las que pasa el actor, las acciones que ejecuta en cada una de ellas y los elementos que interactúan entre estas rutas.\n\nEn resumen, esta figura muestra la interconexión entre los subdominios del metamodelo BAC, resaltando el papel del cliente en su relación con el negocio.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "111",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p113": {
+    "text": "[Figura en p.113] La figura 58 ilustra la relación entre **acción**, **interacción**, **canal**, **medio** y **actividad** en el contexto de la arquitectura empresarial. \n\n*   Se observa un **cliente** (actor) realizando **acciones** (acción-1, acción-2, acción-3) en relación con el **negocio**. \n*   Algunas de estas acciones generan **interacciones** a través de un **canal** (R1) y un **medio** (presencial, teléfono, portal web, chatbot). \n*   Estas interacciones permiten al negocio ejecutar **actividades** (actividad-1) como respuesta.\n\nEn el metamodelo **BAC** (Business Architecture Canvas), se pueden identificar conceptos como:\n\n*   **Actores** (cliente, negocio)\n*   **Procesos** o **actividades** (actividad-1)\n*   **Relaciones** entre el cliente y el negocio\n\nSe puede observar la estructura de cómo las **acciones** del cliente generan **interacciones** que a su vez desencadenan **actividades** en el negocio a través de **canales** y **medios** específicos.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "113",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p114": {
+    "text": "[Figura en p.114] La figura 59 ilustra la relación entre escenarios de negocio y rutas de clientes. Muestra cómo un escenario de negocio E1, con actividades A1 a A6, se relaciona con una ruta de cliente R1, que incluye acciones como acción-X, acción-Y y acción-Z. Estas acciones generan interacciones significativas con el negocio.\n\nEn la figura 60, se observa que tanto el cliente como el negocio pueden generar interacciones. El negocio puede ejecutar actividades (actividad-2 y actividad-3) que generan interacciones con el cliente a través de canales, como se muestra con acción-4 y acción-5.\n\nEn cuanto a los conceptos del metamodelo Business Architecture Canvas (BAC) que aparecen:\n\n*   **Actores:** Cliente y negocio.\n*   **Procesos:** Escenarios de negocio (E1) y actividades (A1 a A6).\n*   **Relaciones:** Interacciones entre cliente y negocio.\n\nEstas figuras resaltan la importancia de entender las interacciones y los flujos de actividades para una arquitectura empresarial efectiva.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "114",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p115": {
+    "text": "[Figura en p.115] La figura 61, \"Modelo de negocio de una aerolínea\", muestra un ejemplo del metamodelo Business Activity Canvas (BAC). En este modelo, los actores son el **pasajero** (cliente) y el **aeroopuerto** (socio). El producto ofrecido por la **aerolínea** es el servicio de transporte de pasajeros de un aeropuerto a otro.\n\nSe pueden observar las siguientes **relaciones** y estructuras:\n\n*   La aerolínea interactúa con el pasajero a través del canal **R1** para vender tiquetes.\n*   El pago del tiquete se realiza a través del canal **M1**.\n*   La entrega del servicio de transporte se realiza a través del canal **D1**.\n*   La aerolínea se relaciona con el aeropuerto a través de **R2** y **D2** para el servicio de transporte.\n*   El proceso de negocio implica la compra de tiquetes, pago, entrega de equipaje, controles de seguridad, y finalmente el transporte del pasajero.\n\nLos conceptos del metamodelo BAC que aparecen son: **actores** (pasajero y aeropuerto), **producto** (servicio de transporte), **canales** (R1, M1, D1, R2, D2) y **relaciones** entre actores y canales.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "115",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p116": {
+    "text": "[Figura en p.116] La figura presenta dos diagramas relacionados con el modelo de negocio de una aerolínea en el contexto del curso ISIS-2403 Arquitectura Empresarial.\n\nEl primer diagrama muestra el canal de interacción **R1** entre el **cliente** (pasajero) y la **aerolínea**, donde se identifican los **medios** disponibles (Medio-1 y Medio-2) y las **acciones** que el pasajero debe realizar (Acción-1, Acción-2 y Acción-3) a través de los empleados de la aerolínea.\n\nEl segundo diagrama ilustra las **7 etapas** por las que pasa un cliente de una aerolínea, desde antes de la compra del tiquete hasta después del viaje. \n\nSe puede evidenciar la interacción entre los **actores** (cliente y empleados de la aerolínea) y los **procesos** asociados con cada etapa del viaje del cliente.\n\nAparecen conceptos del metamodelo **BAC** (Business Architecture Canvas) como:\n\n*   **Actores**: cliente (pasajero), empleados de la aerolínea.\n*   **Procesos**: compra de tiquete, preparación del viaje, trámites aeropuerto origen, embarque y vuelo, trámites aeropuerto destino, después del viaje.\n*   **Relaciones**: el cliente interactúa con la aerolínea a través de los canales **R1** y medios de interacción.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "116",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p117": {
+    "text": "[Figura en p.117] La figura 64, titulada \\\"Etapas, acciones y rutas de clientes\\\", ilustra el modelado de procesos de negocio en el contexto de Arquitectura Empresarial. Muestra una secuencia de etapas ( Etapa 1 a Etapa 7) y acciones asociadas, representadas por círculos amarillos, que varían en número por etapa. Esto refleja la estructura de un proceso de negocio, donde cada etapa agrupa un conjunto de acciones necesarias para su ejecución. \n\nDesde la perspectiva del metamodelo Business Architecture Canvas (BAC), esta figura resalta principalmente los conceptos de **procesos** (secuencias de etapas) y **acciones** (actividades dentro de cada etapa). \n\nSe pueden identificar relaciones entre etapas y acciones, y cómo estas se secuencian en el tiempo, mostrando la estructura del proceso. Adicionalmente, se pueden inferir **rutas de clientes** al considerar las acciones que son opcionales o que se activan en situaciones anormales, relacionadas con **roles de actores** (no explícitamente representados) y  **productos o servicios** (implícitos en el contexto de las acciones).",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "117",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p118": {
+    "text": "[Figura en p.118] La figura muestra el metamodelo de rutas de clientes que sigue el modelo de negocio en la Arquitectura Empresarial. En este metamodelo, se identifican estos elementos:\n\n*   **Negocio**: representa la organización en su conjunto.\n\n*   **Servicio de negocio**: Son los servicios ofrecidos por la empresa, los cuales tienen rutas de clientes asociadas.\n\n*   **Actor**: cualquier entidad que participa en el proceso.\n\n*   **Ruta de cliente:** secuencia de etapas diseñada para un servicio de negocio.\n\n*   **Etapa:** parte de una ruta de cliente. Tiene un resultado y puede tener subetapas.\n\n*   **Acción:** elemento de una etapa.\n\n*   **Interacción:** subclase de acción que registra una interacción con el negocio.\n\nSe puede observar que un servicio de negocio puede tener múltiples rutas de clientes asociadas; a su vez, cada ruta puede tener diversas etapas, con resultados y subetapas. Además, existen actores que interactúan en las etapas, llevando a cabo acciones con características y resultados específicos.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "118",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p119": {
+    "text": "[Figura en p.119] La figura presenta una tabla que describe el artefacto **BAC-80**, asociado con la ruta de un cliente. Este artefacto permite registrar las etapas, subetapas y acciones que un cliente realiza a lo largo de un servicio de negocio.\n\nEn esta tabla, se pueden observar los siguientes campos:\n\n*   **Etapa (ET) y subetapa:** describen las fases en las que se divide un proceso.\n*   **ID, nombre y características:** identifican y describen las acciones específicas realizadas en cada subetapa.\n*   **Opcional:** indica si la acción es obligatoria o no.\n*   **Interacción:** señala si la acción genera interacción con otros actores o sistemas.\n\nLos conceptos del metamodelo **BAC** presentes son:\n\n*   **Procesos:** representados por las etapas y subetapas.\n*   **Acciones:** las tareas específicas realizadas en cada subetapa.\n\nSe pueden establecer relaciones entre:\n\n*   **Etapas y subetapas:** una etapa puede tener varias subetapas.\n*   **Acciones e interacciones:** algunas acciones generan interacciones con otros actores o sistemas.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "119",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p120": {
+    "text": "[Figura en p.120] La Figura 66 ilustra las etapas y grupos de acciones típicas en la ruta de un cliente, organizada en cuatro fases: Antes, Adquisición, Uso y Después. Estas fases contienen subetapas como Conciencia, Compra, Uso y Soporte, entre otras.\n\nDesde la perspectiva del metamodelo Business Architecture Canvas (BAC), esta figura representa principalmente **procesos** y **actividades** asociados con la **interacción del cliente**. \n\nSe pueden identificar **actores** (clientes) y **relaciones** entre las etapas, mostrando una secuencia lógica en la experiencia del cliente. \n\nLa Figura 67 proporciona un ejemplo específico para un supermercado, detallando las acciones del cliente en cada etapa.\n\nEstas figuras enfatizan la importancia de comprender la experiencia del cliente para diseñar **procesos** efectivos y mejorar la **arquitectura empresarial**.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "120",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p121": {
+    "text": "[Figura en p.121] La figura 68 muestra las etapas en la ruta de un estudiante universitario en el contexto de la Arquitectura Empresarial. Esta ruta representa un **proceso** que involucra seis **etapas**: inscripción al programa, admisión al programa, matrícula e inscripción a cursos, semestre académico, grado del programa y egresado del programa.\n\nCada etapa se compone de **subetapas**. Se puede identificar un **actor** (el estudiante) y un **producto o servicio** (la educación universitaria ofrecida a lo largo de varios semestres).\n\nSe pueden observar **relaciones** entre las etapas, que reflejan el flujo del proceso. También se identifican **actividades** específicas en cada etapa, como la solicitud de admisión, la matrícula, el examen de admisión, las actividades académicas y extracurriculares, entre otras. Estas actividades revelan una estructura de **procesos** y **subprocesos** que apoyan la ruta del estudiante.\n\nEsta figura ilustra cómo un **actor** (estudiante) interactúa con la universidad a lo largo de su trayectoria académica. Es un ejemplo de cómo se puede modelar un **proceso** en el marco de la Arquitectura Empresarial.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "121",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p122": {
+    "text": "[Figura en p.122] Esta figura presenta una tabla que describe las acciones clave en dos casos de estudio: un supermercado y una universidad. Para cada caso, se identifican etapas y acciones asociadas.\n\nEn el supermercado, las etapas son la decisión de ir al supermercado y la selección y toma de productos. Las acciones incluyen consultar el portal web, hacer una lista de compras, consultar con amigos, leer publicidad, recorrer pasillos, seleccionar productos, comparar presentaciones y sacar productos del carro.\n\nEn la universidad, las etapas son el examen de admisión y las actividades académicas. Las acciones incluyen averiguar temas del examen, preparar el examen, hacer un examen de entrenamiento, ir a la universidad, asistir a clases, estudiar, presentar exámenes y trabajos.\n\nSe pueden observar conceptos del metamodelo Business Architecture Canvas (BAC) como procesos (etapas y acciones) y actores (clientes o estudiantes). Las relaciones entre etapas y acciones reflejan la experiencia del cliente.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "122",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p124": {
+    "text": "[Figura en p.124] La figura 69 muestra un ejemplo de visualización de una ruta de cliente, la cual representa las distintas etapas por las que un cliente puede transitar en su interacción con una empresa. \n\nEn esta visualización se pueden observar las siguientes estructuras:\n\n*   Etapas: Corresponden a los diferentes momentos o puntos de contacto que tiene un cliente con la empresa. \n*   Acciones: Son las actividades o tareas que realiza el cliente durante cada etapa. \n*   Canales: Son los medios a través de los cuales el cliente interactúa con la empresa. \n*   Negocio: Corresponde al contexto o ámbito en el que se desarrolla la interacción entre el cliente y la empresa.\n\nEn cuanto a los conceptos del metamodelo BAC (Business Architecture Canvas), en esta figura se pueden identificar:\n\n*   **Actores**: clientes\n*   **Procesos**: etapas\n*   **Productos**: No se observan explícitamente, pero podrían estar relacionados con las acciones o las promociones de compra.\n\nEstas estructuras y conceptos permiten analizar y diseñar la arquitectura empresarial para mejorar la experiencia del cliente y alinearla con los objetivos del negocio.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "124",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p127": {
+    "text": "[Figura en p.127] La figura 70 ilustra el metamodelo de un metamodelo, que es un elemento fundamental en la arquitectura empresarial. Este metamodelo define la estructura de los modelos ontológicos y está compuesto por seis conceptos: \n\n*   **Metamodelo:** Clase raíz que define el modelo. \n*   **Concepto:** Entidades principales del modelo, pueden tener atributos y estar conectados entre sí. \n*   **Atributo:** Característica de un concepto. \n*   **Relación:** Define vínculos entre conceptos con roles y cardinalidad. \n*   **Enumeración:** Conjunto de valores posibles para un atributo. \n*   **Valor:** Representa un valor específico dentro de una enumeración. \n\nEste metamodelo permite definir modelos ontológicos a través de artefactos como diagramas de clases, catálogos de conceptos, atributos, relaciones y restricciones. No aparecen actores, ni productos, ni procesos en esta figura; sin embargo, sí aparecen elementos que estructuran estos aspectos en un modelo de arquitectura empresarial.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "127",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p128": {
+    "text": "[Figura en p.128] La Figura 71 representa la estructura de negocio de un **marketplace** simple utilizando el metamodelo **BAC** (Business Architecture Canvas). En ella, se identifican los siguientes elementos:\n\n- **Actores**: \n  - **Vendedor** \n  - **Comprador** \n\n- **Componte de negocio**: \n  - **Marketplace**\n\n- **Relaciones**: \n  - **R1**: Relaciona al **Vendedor** con el **Marketplace**.\n  - **R2**: Relaciona al **Comprador** con el **Marketplace**.\n\n- **Interfaz**:\n  - **I1**: Interfaz entre el **Vendedor** y el **Marketplace**.\n  - **D1**: Interfaz entre el **Comprador** y el **Marketplace**.\n\n- **Mensajes**:\n  - **M1**: Mensaje entre el **Comprador** y el **Marketplace**.\n\nEsta figura ilustra cómo los actores interactúan con el componente de negocio a través de interfaces y mensajes, mostrando la estructura básica de un **marketplace**.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "128",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p129": {
+    "text": "[Figura en p.129] La figura presenta un modelo ontológico de un *marketplace* simple en el contexto de Arquitectura Empresarial (curso ISIS-2403). Este diagrama ilustra los componentes clave de un *marketplace*, incluyendo actores como *vendedores* y *compradores* que interactúan a través de la plataforma *Marketplace*. Los conceptos del metamodelo *BAC* (Business Architecture Canvas) observables son:\n\n*   **Actores**: *Vendedor*, *Comprador* y *Marketplace*.\n*   **Productos**: *Producto*, *catálogo*.\n*   **Procesos/Relaciones**: Transacciones de venta, facturas, compras y ventas.\n\nSe observan estructuras como:\n\n*   Relaciones de cardinalidad múltiple entre *Marketplace* y *vendedores* y entre *Marketplace* y *compradores*. \n*   Relaciones de compra y venta. \n\nEste modelo proporciona una visión general de la arquitectura de un *marketplace*, centrándose en las entidades involucradas y sus interacciones.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "129",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p130": {
+    "text": "[Figura en p.130] La figura muestra los **subdominios de un modelo ontológico**, que son los siguientes: \n\n*   **Modelo de productos**: Define el conjunto de productos o servicios ofrecidos por la empresa.\n*   **Insumos y proveedores**: Modela los recursos necesarios para la operación y sus proveedores.\n*   **Modelo de actores**: Identifica las entidades o actores clave que intervienen en la empresa.\n*   **Estructura de la empresa**: Describe la organización interna de la empresa.\n*   **Transacciones**: Representa las interacciones y procesos clave de la empresa.\n\nEstas categorías ayudan a construir un metamodelo que refleje la estructura y dinámica de una empresa.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "130",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p132": {
+    "text": "[Figura en p.132] La figura 74 muestra un metamodelo de actores de una universidad. Este metamodelo es parte de la Arquitectura Empresarial (ISIS-2403) y forma parte de la capa de información del framework Business Architecture Canvas. \n\nEsta figura representa la evolución de un cliente en diferentes etapas dentro de una universidad. Los conceptos principales son:\n\n*   **Actores**: Se identifican cuatro actores: *   Aspirante, que podría ser un cliente potencial. *   Estudiante, que es el cliente. *   Estudiante suspendido, que es un cliente inactivo temporalmente. *   Egresado, que también es un cliente inactivo.\n\n*   **Relaciones**: Se observan relaciones entre estos actores y la Universidad.\n\n*   **Estructuras**: Se puede observar una estructura jerárquica entre los actores.\n\nEste metamodelo es una forma de clasificar a clientes y actores en una universidad a través de un enfoque de modelado de negocio.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "132",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p133": {
+    "text": "[Figura en p.133] La figura 75 ilustra las dimensiones de conocimiento de un actor en el contexto del metamodelo de Arquitectura Empresarial. Se centra en un **actor** (cliente) y describe su conocimiento a través de cinco dimensiones:\n\n*   Información personal\n*   Entorno\n*   Consumo\n*   Perfil socioeconómico \n*   Contactos\n\nEstas dimensiones abarcan atributos demográficos, comportamiento de compra, situación financiera y canales de interacción. \n\nEn el metamodelo **BAC** (Business Architecture Canvas), este diagrama se relaciona con la **capa de actores** y su **perfil**, mostrando una estructura de conocimiento del cliente. \n\nSe observa una estructura jerárquica con relaciones entre las dimensiones y subcategorías de información asociadas a cada una. \n\nEsta representación permite comprender mejor las características y necesidades de los actores para diseñar estrategias efectivas en la arquitectura empresarial.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "133",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p134": {
+    "text": "[Figura en p.134] La Figura 76 presenta el modelo ontológico de Netflix, basado en el metamodelo Business Architecture Canvas (BAC). \n\nMuestra los siguientes conceptos:\n\n*   **Actores:** Suscriptor, Proveedor de contenidos.\n*   **Productos:** Contenido (películas, series, temporadas), Categoría, Licencia.\n*   **Procesos/Transacciones:** Pago, Registro.\n\nSe pueden observar las siguientes relaciones:\n\n*   Un suscriptor puede realizar pagos (relacion Suscriptor - Pago) y tiene un perfil (relacion Suscriptor - Perfil).\n*   Un perfil puede tener una lista de contenidos (miLista) y recomendaciones.\n*   Un contenido puede ser una película o una serie (especialización).\n*   Un contenido puede tener temporadas (composición).\n\nEstas relaciones y estructuras permiten modelar la arquitectura de Netflix de manera integral.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "134",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p135": {
+    "text": "[Figura en p.135] La figura muestra el **modelo ontológico** de la Editorial de los Alpes, que representa la **estructura y relaciones** de los conceptos clave en el dominio de esta empresa. Se observa la **Editorial de los Alpes** como raíz, con subdominios de autores, libros y ejemplares (productos), librerías y colegios (intermediarios).\n\nSe representan **actores** como autores, librerías, colegios, ciudad y bodegas. Los **productos** son libros y ejemplares. Se modelan **procesos** implícitos como pagos, pedidos y uso en cursos.\n\n**Relaciones**:\n\n*   Un autor puede realizar pagos.\n*   Una ciudad tiene bodegas y librerías.\n*   Un colegio utiliza libros en cursos.\n*   Un libro se relaciona con su ejemplar.\n\nEstructuras:\n\n*   **Jerárquica**: Autores, librerías y colegios como subdominios.\n*   **Asociativa**: Relaciones entre actores y productos.\n\nSe aplican conceptos del metamodelo Business Architecture Canvas (BAC) como actores, productos y procesos.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "135",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p136": {
+    "text": "[Figura en p.136] La figura muestra los componentes del framework **BAC (Business Architecture Construction)**, diseñado para apoyar el trabajo de los arquitectos empresariales. El framework consta de tres componentes principales:\n\n1. **BAC**: Incluye metamodelos y artefactos que aceleran la construcción de la arquitectura empresarial a través de 13 dominios, subdivididos en subdominios.\n2. **BAC Playbook**: Ofrece lecturas, exámenes teóricos y prácticos, casos de estudio, videos y un marco metodológico para arquitectos.\n3. **BAC Studio**: Incluye herramientas como editores gráficos, generadores de artefactos, análisis automático, exportadores e importadores, y herramientas de Inteligencia Artificial.\n\nEstos componentes interactúan para proporcionar una estructura integral para la arquitectura empresarial, relacionando dominios, subdominios, metamodelos y artefactos con recursos prácticos y tecnológicos. Esto permite modelar y analizar organizaciones de manera efectiva.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "136",
+      "type": "image"
+    }
+  },
+  "El Modelo de Negocio 2027.pdf::p137": {
+    "text": "[Figura en p.137] La figura muestra la red de metamodelos y artefactos del marco de referencia BAC (Business Architecture Canvas). Está compuesta por 13 dominios de una arquitectura empresarial (D1...D13) y 13 modelos (M1...M13) asociados, cada uno de los cuales contiene información de uno de los dominios. Cada dominio está definido por un conjunto de metamodelos ({MM-1}...{MM-13}). \n\nSe pueden observar las relaciones entre los diferentes dominios y sus modelos asociados. Los dominios incluyen negocio, financiero, estrategia, capacidades, organizacional, procesos, recursos, indicadores, aplicaciones, información, infraestructura, integración y seguridad. \n\nLos metamodelos definen el mapa de conceptos de cada dominio. La figura ilustra la estructura y organización del framework BAC, mostrando cómo se relacionan los diferentes elementos para formar una arquitectura empresarial integral. \n\nEsta representación gráfica facilita la comprensión de la interconexión entre los distintos componentes de la arquitectura.",
+    "metadata": {
+      "file_name": "El Modelo de Negocio 2027.pdf",
+      "page_label": "137",
+      "type": "image"
+    }
+  }
+}

@@ -27,7 +27,10 @@ def _format_history(messages: list) -> str:
     lines = []
     for msg in messages[:-1]:
         role = "Estudiante" if msg["role"] == "user" else "BAC Tutor"
-        lines.append(f"{role}: {msg['content']}")
+        content = msg["content"]
+        if msg.get("image_name"):
+            content = f"[compartió imagen: {msg['image_name']}] {content}"
+        lines.append(f"{role}: {content}")
     return "\n".join(lines) if lines else "(inicio de la conversación)"
 
 

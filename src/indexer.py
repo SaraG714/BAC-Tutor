@@ -22,6 +22,7 @@ INDEX_DIR = "vector_index"
 EMBED_MODEL = "paraphrase-multilingual-MiniLM-L12-v2"
 VISION_MODEL = "meta-llama/llama-4-scout-17b-16e-instruct"
 MIN_IMAGE_SIZE = 8000  # bytes — ignora iconos y decoraciones pequeñas
+IMAGE_CACHE_FILE = os.path.join(INDEX_DIR, "image_cache.json")
 
 
 def _describe_image(client: Groq, img_bytes: bytes, file_name: str, page: int):
@@ -73,10 +74,28 @@ def _page_has_visual_content(page) -> bool:
     return False
 
 
+def _load_image_cache() -> dict:
+    """Loads previously described pages to avoid re-processing them."""
+    if os.path.exists(IMAGE_CACHE_FILE):
+        with open(IMAGE_CACHE_FILE, encoding="utf-8") as f:
+            return json.load(f)
+    return {}
+
+
+def _save_image_cache(cache: dict):
+    os.makedirs(INDEX_DIR, exist_ok=True)
+    with open(IMAGE_CACHE_FILE, "w", encoding="utf-8") as f:
+        json.dump(cache, f, ensure_ascii=False, indent=2)
+
+
 def _extract_image_chunks(docs_dir: str, client: Groq) -> tuple[list, list]:
-    """Renders pages with visual content and describes them with Groq Vision."""
+    """Renders pages with visual content and describes them with Groq Vision.
+    Uses a cache so re-runs only process pages that failed or are new.
+    """
+    cache = _load_image_cache()
     texts, metadatas = [], []
     pdf_files = [f for f in os.listdir(docs_dir) if f.lower().endswith(".pdf")]
+    new_entries = 0
 
     for pdf_file in pdf_files:
         path = os.path.join(docs_dir, pdf_file)
@@ -86,6 +105,15 @@ def _extract_image_chunks(docs_dir: str, client: Groq) -> tuple[list, list]:
 
         for page_num, page in enumerate(doc, start=1):
             if not _page_has_visual_content(page):
+                continue
+
+            cache_key = f"{pdf_file}::p{page_num}"
+
+            # Use cached description if available
+            if cache_key in cache:
+                texts.append(cache[cache_key]["text"])
+                metadatas.append(cache[cache_key]["metadata"])
+                img_count += 1
                 continue
 
             # Render page as PNG at 150 DPI
@@ -100,17 +128,27 @@ def _extract_image_chunks(docs_dir: str, client: Groq) -> tuple[list, list]:
             description = _describe_image(client, img_bytes, pdf_file, page_num)
 
             if description:
-                texts.append(f"[Figura en p.{page_num}] {description}")
-                metadatas.append({
+                text = f"[Figura en p.{page_num}] {description}"
+                meta = {
                     "file_name": pdf_file,
                     "page_label": str(page_num),
                     "type": "image",
-                })
+                }
+                texts.append(text)
+                metadatas.append(meta)
+                cache[cache_key] = {"text": text, "metadata": meta}
+                new_entries += 1
                 img_count += 1
                 time.sleep(1.5)  # avoid rate limits
 
-        print(f"    {img_count} páginas con figuras indexadas de {pdf_file}.")
+        print(f"    {img_count} páginas con figuras ({new_entries} nuevas) de {pdf_file}.")
         doc.close()
+
+    if new_entries > 0:
+        _save_image_cache(cache)
+        print(f"  Cache actualizado con {new_entries} entradas nuevas.")
+    else:
+        print("  Todo cargado desde cache — sin llamadas a la API.")
 
     return texts, metadatas
 
