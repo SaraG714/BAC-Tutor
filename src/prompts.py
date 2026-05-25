@@ -187,68 +187,79 @@ Solo genera un diagrama si el estudiante lo pide explícitamente \
 ("muéstrame", "dibuja", "ilústralo", "hazme un diagrama", etc.).
 
 Cuando generes un diagrama:
-- El bloque ```mermaid debe tener SIEMPRE el identificador "mermaid" \
-  (nunca solo ```). Sin excepción.
-- Cuando el estudiante pide explícitamente dibujar o ilustrar algo, \
-  el diagrama va PRIMERO. Una sola oración de cierre después, si hace falta. \
-  Nada de párrafos explicativos antes del diagrama.
-CONVENCIÓN DE FORMAS (igual que en el material del curso):
-- El negocio se representa con un subgraph que muestra sus componentes internos \
-  visibles (bodega, área de ventas, cocina, etc.):
-    subgraph N [NombreNegocio]
-        Comp1[Componente interno 1]
-        Comp2[Componente interno 2]
+- El bloque debe abrirse con ```mermaid (siempre con la palabra "mermaid").
+- El diagrama va PRIMERO. Una sola oración de cierre después, si hace falta.
+
+━━━ REGLAS DE SINTAXIS MERMAID — CRÍTICAS ━━━
+
+REGLA 1 — CADA NODO NECESITA UN ID SIMPLE + UNA ETIQUETA:
+  Formato correcto:   ID(Etiqueta legible)     ← rectángulo redondeado
+                      ID[Etiqueta legible]      ← rectángulo
+  PROHIBIDO:          (Etiqueta)               ← sin ID → error de sintaxis
+  IDs válidos: solo letras y números sin espacios ni acentos. Ejemplos:
+    Prov1, Cliente1, VentasComp, DistribComp
+
+REGLA 2 — FLECHAS CON ETIQUETA:
+  Formato correcto:   ID1 -->|R1| ID2
+  PROHIBIDO:          ID1 -->|R1|> ID2         ← el > sobrante rompe el parser
+  PROHIBIDO:          ID1 --R1--> ID2
+
+REGLA 3 — SUBGRAPH:
+  Formato correcto (exacto, respeta minúsculas):
+    subgraph N [Nombre del negocio]
+        Comp1[Componente interno]
+        Comp2[Componente interno]
     end
-  Si el material no detalla los componentes internos para ese ejemplo, \
-  deja el subgraph vacío.
-- Actor externo → rectángulo redondeado: (NombreActor)
-- Proveedor externo → igual que actor: (NombreProveedor)
-- Los canales conectan actores externos con los componentes internos del negocio \
-  (no con el subgraph entero como nodo).
+  PROHIBIDO: "End", "END", "Subgraph" como ID (son palabras reservadas).
+  Usa siempre "end" en minúsculas para cerrar el subgraph.
+
+REGLA 4 — ORDEN EN EL ARCHIVO:
+  1. Declara primero todos los nodos externos (fuera del subgraph).
+  2. Luego el bloque subgraph con los nodos internos.
+  3. Luego todas las flechas (ninguna flecha dentro del subgraph).
+
+CONVENCIÓN DE FORMAS:
+- Actor externo / proveedor → rectángulo redondeado: ID(Nombre)
+- Componente interno del negocio → rectángulo: ID[Nombre]
+- El negocio → subgraph con sus componentes internos visibles.
 
 CONVENCIÓN DE CANALES — OBLIGATORIA:
-- Los canales típicamente conectan actores con el negocio (o componente con componente). \
-  Los canales directos entre dos actores son poco comunes; solo inclúyelos si los \
-  fragmentos del material los muestran explícitamente para ese ejemplo.
-- El prefijo del canal indica su tipo. \
-  PROHIBIDO usar C, X o cualquier otra letra. Solo estos:
+- Prefijos permitidos (SOLO estos):
     R = Relacionamiento  (interacción con el actor)
     M = Monetización     (flujo de dinero hacia el negocio)
     D = Distribución     (entrega del producto al actor)
     A = Aprovisionamiento (insumos que entran al negocio)
     T = Transformación   (producción interna)
     I = Información      (intercambio de datos)
-- Cada canal tiene número consecutivo por tipo: R1, R2, M1, D1, D2, etc.
-- Cada canal es una flecha separada con su etiqueta: -->|R1|
+- Numeración consecutiva por tipo: R1, R2, M1, D1, D2…
+- PROHIBIDO: C, X u otras letras que no estén en la lista.
 
 LAYOUT:
-- Proveedores a la izquierda, negocio al centro (subgraph), \
-  clientes/usuarios a la derecha.
-- Usa graph LR para estructuras de negocio.
-- Para jerarquías o clasificaciones del metamodelo usa graph TD.
-- Para escenarios (secuencia de pasos) usa sequenceDiagram.
-- Máximo 8 nodos por diagrama.
-- No inventes relaciones. Solo diagrama lo que esté en los fragmentos.
+- Proveedores a la izquierda, negocio al centro, clientes a la derecha.
+- Estructuras de negocio → graph LR
+- Jerarquías o clasificaciones → graph TD
+- Secuencias de pasos → sequenceDiagram
+- Máximo 8 nodos. No inventes relaciones.
 
-Plantilla de sintaxis:
+Ejemplo completo y válido (úsalo como referencia de sintaxis, no copies el contenido):
 ```mermaid
 graph LR
-    ActorExterno1(Nombre actor)
-    ActorExterno2(Nombre actor)
+    Prov1(Proveedor)
+    Cli1(Cliente)
 
     subgraph N [Nombre del negocio]
-        Comp1[Componente interno]
-        Comp2[Componente interno]
+        Bod1[Bodega]
+        Vta1[Área de ventas]
     end
 
-    ActorExterno1 -->|TipoN| Comp1
-    Comp1 -->|TipoN| Comp2
-    Comp2 -->|TipoN| ActorExterno2
-    ActorExterno2 -->|TipoN| Comp2
+    Prov1 -->|A1| Bod1
+    Bod1 -->|T1| Vta1
+    Vta1 -->|D1| Cli1
+    Cli1 -->|M1| Vta1
+    Vta1 -->|R1| Cli1
 ```
-Reemplaza cada nodo y etiqueta con los actores, componentes y canales \
-que aparezcan en los fragmentos del material para el caso concreto. \
-No copies esta plantilla — razona qué va en cada lugar.
+Sustituye cada ID, etiqueta y canal con los del caso concreto. \
+No copies este ejemplo — razona qué va en cada lugar.
 
 ═══════════════════════════════════════════
 REGLAS QUE NUNCA CAMBIAN

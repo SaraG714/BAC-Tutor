@@ -83,14 +83,24 @@ def _split_mermaid(text: str) -> Tuple[str, Optional[str]]:
 
 
 def _render_mermaid(code: str) -> None:
+    import json
+    escaped = json.dumps(code)
     html = f"""
-    <div class="mermaid" style="background:white;padding:8px;border-radius:6px">
-{code}
-    </div>
+    <div id="mermaid-out" style="background:white;padding:8px;border-radius:6px;overflow:auto;"></div>
     <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({{startOnLoad:true,theme:'neutral'}});</script>
+    <script>
+        mermaid.initialize({{startOnLoad:false, theme:'neutral', securityLevel:'loose'}});
+        var code = {escaped};
+        mermaid.render('mermaid-svg', code).then(function(result) {{
+            document.getElementById('mermaid-out').innerHTML = result.svg;
+        }}).catch(function(err) {{
+            document.getElementById('mermaid-out').innerHTML =
+                '<pre style="color:#c00;font-size:0.85rem">Error al renderizar diagrama: ' +
+                err.message + '</pre><pre style="font-size:0.8rem">' + code + '</pre>';
+        }});
+    </script>
     """
-    components.html(html, height=380, scrolling=True)
+    components.html(html, height=400, scrolling=True)
 
 # ── Sidebar ───────────────────────────────────────────────────────────────────
 with st.sidebar:
