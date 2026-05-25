@@ -84,13 +84,27 @@ def _split_mermaid(text: str) -> Tuple[str, Optional[str]]:
 
 def _render_mermaid(code: str) -> None:
     html = f"""
-    <div class="mermaid" style="background:white;padding:8px;border-radius:6px">
-{code}
+    <div id="mermaid-wrap" style="background:white;padding:8px;border-radius:6px">
+      <div class="mermaid">{code}</div>
+    </div>
+    <div id="mermaid-err" style="display:none;color:#b00;font-size:0.85rem;padding:6px">
+      ⚠️ El diagrama tiene un error de sintaxis. Pide al tutor que lo regenere.
     </div>
     <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({{startOnLoad:true,theme:'neutral'}});</script>
+    <script>
+      mermaid.initialize({{
+        startOnLoad: true,
+        theme: 'neutral',
+        securityLevel: 'loose',
+        suppressErrorRendering: true,
+      }});
+      mermaid.run().catch(function() {{
+        document.getElementById('mermaid-wrap').style.display = 'none';
+        document.getElementById('mermaid-err').style.display = 'block';
+      }});
+    </script>
     """
-    components.html(html, height=380, scrolling=True)
+    components.html(html, height=400, scrolling=True)
 
 # ── Sidebar ───────────────────────────────────────────────────────────────────
 with st.sidebar:

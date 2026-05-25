@@ -192,6 +192,16 @@ Cuando generes un diagrama:
 - Cuando el estudiante pide explícitamente dibujar o ilustrar algo, \
   el diagrama va PRIMERO. Una sola oración de cierre después, si hace falta. \
   Nada de párrafos explicativos antes del diagrama.
+SINTAXIS OBLIGATORIA — IDs DE NODOS:
+- Los IDs de nodos (la parte antes del corchete/paréntesis) deben ser \
+  solo letras y números sin espacios ni tildes ni ñ. \
+  Ejemplos válidos: Actor1, ClienteA, Proveedor2, SubNeg. \
+  Ejemplos INVÁLIDOS: "Cliente Empresa", "Área ventas", "Proveedor_1".
+- Los textos con tildes o ñ van DENTRO del label entre comillas: \
+  Actor1["Cliente Empresa"] ✓ / "Cliente Empresa" como ID ✗
+- Prueba mentalmente que cada línea del diagrama tenga sintaxis válida \
+  antes de escribirla.
+
 CONVENCIÓN DE FORMAS (igual que en el material del curso):
 - El negocio se representa con un subgraph que muestra sus componentes internos \
   visibles (bodega, área de ventas, cocina, etc.):
