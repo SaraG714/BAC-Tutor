@@ -86,6 +86,7 @@ def _render_mermaid(code: str) -> None:
     import json
     escaped = json.dumps(code)
     html = f"""
+<<<<<<< HEAD
     <div id="mermaid-out" style="background:white;padding:8px;border-radius:6px;overflow:auto;"></div>
     <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
     <script>
@@ -98,6 +99,26 @@ def _render_mermaid(code: str) -> None:
                 '<pre style="color:#c00;font-size:0.85rem">Error al renderizar diagrama: ' +
                 err.message + '</pre><pre style="font-size:0.8rem">' + code + '</pre>';
         }});
+=======
+    <div id="mermaid-wrap" style="background:white;padding:8px;border-radius:6px">
+      <div class="mermaid">{code}</div>
+    </div>
+    <div id="mermaid-err" style="display:none;color:#b00;font-size:0.85rem;padding:6px">
+      ⚠️ El diagrama tiene un error de sintaxis. Pide al tutor que lo regenere.
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({{
+        startOnLoad: true,
+        theme: 'neutral',
+        securityLevel: 'loose',
+        suppressErrorRendering: true,
+      }});
+      mermaid.run().catch(function() {{
+        document.getElementById('mermaid-wrap').style.display = 'none';
+        document.getElementById('mermaid-err').style.display = 'block';
+      }});
+>>>>>>> 9a317ea13c619f3d337ef4af5a1566ee3cc92225
     </script>
     """
     components.html(html, height=400, scrolling=True)
